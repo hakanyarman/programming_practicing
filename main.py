@@ -21,6 +21,8 @@ def hello_world():
 def homepage():
     return render_template("homepage.html")
 
+
+
 @app.route('/profile')
 def profile():
     return render_template("profile.html")
@@ -62,6 +64,9 @@ def form_submit():
 def send_report(path):
     return send_from_directory('static', path)
 
+@app.route('/grid')
+def grid():
+    return render_template("grid.html",data2=randint(0,100))
 
     
 
