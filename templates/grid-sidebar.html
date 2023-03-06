@@ -19,13 +19,22 @@
             grid-template-columns: 1fr 4fr 1fr; 
             /* fr: fractional unit :  bouyutu toplamına böler
             bu durumda ortadaki column 4/6 genişliğindedir */
+            grid-template-rows: 80px 1fr 80px;
+            /* header ve footer'ın satır yükseklikleri 80px ortadaki main content'in 
+            satır yüksekliği 160px den geriye kalan tüm yükseklik olur  */
         }
         header, footer,main,aside,nav{
             background-color : brown;
             color: white;
             padding: 15px;
             border: 1px red solid;
-
+        }
+        header{
+            grid-column: 1 / span 3;
+            /* 1. column'dan itibaren 3 hücre kapla demek. */
+        }
+        footer{
+            grid-column: 1 / span 3;
         }
     </style>
 </head>
