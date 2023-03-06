@@ -3,11 +3,10 @@ from flask import Flask,render_template
 from random import randint
 from flask import send_from_directory
 from flask import Flask, request
- 
+
+
 
 app = Flask(__name__)
- 
-
 @app.route('/')
 def hello_world():
     return """<h1>
@@ -50,6 +49,7 @@ def other2():
     return render_template("styles.css",data=randint(5,500))
 """
 
+
 @app.route('/form')
 def form():
     return render_template("form.html")
@@ -67,6 +67,10 @@ def send_report(path):
 @app.route('/grid')
 def grid():
     return render_template("grid.html",data2=randint(0,100))
+
+@app.route('/grid-sidebar')
+def gridSideBar():
+    return render_template("grid-sidebar.html")
 
     
 

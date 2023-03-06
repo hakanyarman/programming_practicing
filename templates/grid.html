@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        
         body{
             margin: 0;
         }
         .container{
             background-color: brown;
-            padding: 20px;
+            padding: 5px;
             display: grid;
+            gap: 10px;
+            grid-template-columns: auto auto auto;
+            
         }
         .item{
             background-color : orange;
@@ -23,12 +27,19 @@
         }
     </style>
     <script>
-        
+        var jsData = {{ data2|tojson }};
+
+        console.log(jsData);
+        document.getElementById("p").innerHTML=jsData;
+        function click(){
+            document.getElementById("p").innerHTML = data2;
+        }
     </script>
 </head>
 <body>
     <div class="container">
-        <div class="item" id="item1">Grid item 1 {{data2}}</div>
+        
+        <div class="item" id="item1">Grid item 1  {{data2}}</div>
         <div class="item" id="item2">Grid item 2</div>
         <div class="item" id="item3">Grid item 3</div>
         <div class="item" id="item4">Grid item 4</div>
@@ -37,8 +48,10 @@
         <div class="item" id="item7">Grid item 7</div>
         <div class="item" id="item8">Grid item 8</div>
         <div class="item" id="item9">Grid item 9</div>
-        <div class="item" id="item10">Grid item 10</div>
-        
+    </div>
+    <div id="deneme">
+        <button onclick="click()" /> click me   </button>
+        <p id="p">etnenet</p>
     </div>
 </body>
 </html>
