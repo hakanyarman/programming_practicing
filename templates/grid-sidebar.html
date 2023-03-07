@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+      /* her grid item'ının ayrı ayrı stilini düzenle
+      3 e 3 matris oluştur .
+      */
         body{
              margin: 0;  
              /* köşelerden boşlukları aldık */
@@ -24,8 +27,8 @@
             satır yüksekliği 160px den geriye kalan tüm yükseklik olur  */
         }
         header, footer,main,aside,nav{
-            background-color : brown;
-            color: white;
+            background-color : rgb(225, 206, 206);
+            color: rgb(0, 0, 0);
             padding: 15px;
             border: 1px red solid;
         }
@@ -36,16 +39,66 @@
         footer{
             grid-column: 1 / span 3;
         }
+        .sidebar{
+          height:400px;
+        }
+        .sidebar ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 150px;
+        
+        }
+        .sidebar li{
+        height: 120px;
+        text-align: center;
+        border-bottom: 1px solid #555;
+
+        }
+        .sidebar li a {
+          font-size: 2em;
+        display: block;
+        width: 60px;
+        
+
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>Header</header>
-        <nav>Navigation</nav>
-        <main>Content</main>
-        <aside>Aside</aside>
+        <nav>Navigation
+          <div class="sidebar">
+            <ul>
+              <li><a href="http://127.0.0.1:5000/homepage">Home</a></li>
+              <li><a href="http://127.0.0.1:5000/profile">Profile</a></li>
+              <li><a href="http://127.0.0.1:5000/about">About</a></li>
+              <li><a href="http://127.0.0.1:5000/contact">Contact</a></li>
+            </ul>
+            
+          </div>
+        </nav>
+        <main>Content
+          <div class="main-content">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <br>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <br>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <br>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+          </div>
+        </main>
+        <aside>Aside
+          <div class="social">
+            <h3>My Social Media Accounts</h3>
+            <p><a href="https://www.instagram.com/">Instagram</a></p>
+          </div>
+        </aside>
         <footer>Footer</footer>
     </div>
+    
 </body>
 </html>
 
