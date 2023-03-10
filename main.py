@@ -66,11 +66,19 @@ def send_report(path):
 
 @app.route('/grid')
 def grid():
-    return render_template("grid.html",data2=randint(0,100))
+    Pokemons =["Pikachu", "Charizard", "Squirtle", "Jigglypuff", 
+           "Bulbasaur", "Gengar", "Charmander", "Mew", "Lugia", "Gyarados"]
+    # return render_template("grid.html",data2=randint(0,100))
+    return render_template("grid.html", len = len(Pokemons), Pokemons = Pokemons)
 
 @app.route('/grid-sidebar')
 def gridSideBar():
     return render_template("grid-sidebar.html")
+
+@app.route('/table')
+def table():
+    return render_template("table.html")
+
 
     
 
