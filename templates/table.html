@@ -5,70 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Table</title>
-    <style>
-        /* write css codes order by from general to specific */
-        table{
-            border: 0.1em solid black;
-        }   
-        table th{
-            width: 16ch;
-            height: 16ch;
-        }
-        table tr {
-            width: 16ch;
-            height: 16ch;
-        }
-        table tr.days {
-            background-color: gray;
-        }
-        table tr.hours-and-data{
-            background-color: lightgray;
-        }
-        table tr.days th#null{
-            background-color: rgb(248, 248, 248)
-        }
-        button#generate-num-button{
-            width: 100px;
-            height: 100px;
-        }
-    </style>
+    <script>
+        
+        var jsNums = JSON.parse('{{anArray | tojson | safe}}');
+        
+    </script>
+    <script src="table-script.js"></script>
+    
+    <link rel="stylesheet" href="table-style.css">
   </head>
   <body>
-    <h2>Staff Working Days List</h2>
-    <table>
+    <div class="table">
+      <h2>Staff Working Days List</h2>
+      <table>
         <tr class="days">
-            <th id="null"></th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
+          <th id="null"></th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
         </tr>
         <tr class="hours-and-data">
-            <th >8-16</th>
-            <td id="data1">gqe</td>
-            <td id="data2">gqe</td>
-            <td id="data3">gqe</td>
-            <td id="data4">gqe</td>
-            <td id="data5">gqe</td>
-            <td id="data6">gqe</td>
-            <td id="data7">gqe</td>
+          <th class="hours">8-16</th>
+          <td id="data1"></td>
+          <td id="data2"></td>
+          <td id="data3"></td>
+          <td id="data4"></td>
+          <td id="data5"></td>
+          <td id="data6"></td>
+          <td id="data7"></td>
         </tr>
         <tr class="hours-and-data">
-            <th>16-24</th>
-            <td id="data8"></td>
-            <td id="data9"></td>
-            <td id="data10"></td>
-            <td id="data11"></td>
-            <td id="data12"></td>
-            <td id="data13"></td>
-            <td id="data14"></td>
+          <th class="hours">16-24</th>
+          <td id="data8"></td>
+          <td id="data9"></td>
+          <td id="data10"></td>
+          <td id="data11"></td>
+          <td id="data12"></td>
+          <td id="data13"></td>
+          <td id="data14"></td>
         </tr>
-    </table>
+      </table>
+    </div>
     <div class="button-container">
-        <button id="generate-num-button"></button>
+      <button id="generate-num-button" onclick="generateNum()">Generate Number</button>
     </div>
   </body>
 </html>

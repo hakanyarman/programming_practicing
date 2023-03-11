@@ -1,8 +1,13 @@
 
 from flask import Flask,render_template
+from flask import json
+
 from random import randint
 from flask import send_from_directory
 from flask import Flask, request
+import json
+import numpy as np
+
 
 
 
@@ -77,7 +82,9 @@ def gridSideBar():
 
 @app.route('/table')
 def table():
-    return render_template("table.html")
+    randnums = np.random.randint(1,101,14)
+    arr_as_list = randnums.tolist()
+    return render_template("table.html",anArray = json.dumps(arr_as_list))
 
 
     
