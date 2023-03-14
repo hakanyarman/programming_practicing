@@ -3,9 +3,28 @@ function generateNum() {
 //   for (let i = 0; i < 14; i++) {
 //     randomNumbers[i] = Math.floor(Math.random() * 100) + 1;
 //   }
-  document.getElementById("data1").innerHTML = jsNums[1];
+
+
+fetch('/getData', {
+  method: 'GET',
+  headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+  }
+  // body: JSON.stringify({ "id": 78912 })
+})
+ .then(response => response.json())
+ .then(response => console.log(JSON.stringify(response)))
+
+
+ 
+
+
+
+
+  document.getElementById("data1").innerHTML = jsNums[0];
   console.log(jsNums);
-  console.log(jsNum);
+  
   // data 1's number is constant. because it is generated from python side
   // if and only if the page refreshed then data 1's number changes. 
   // but other datas changes when button is clicked. 
