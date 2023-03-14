@@ -90,6 +90,10 @@ def table():
 def getData():
     return json.dumps("abcde")
 
+
+@app.route('/notes')
+def notes():
+    return render_template("notes.html")
     
 
 if __name__ == '__main__':

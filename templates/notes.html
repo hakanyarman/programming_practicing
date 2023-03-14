@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button.font-button{
+            width: 9em;
+            height: 3em;
+        }
+    </style>
+    <script>    
+        console.log(document.getElementsByClassName("font-button").style);
+        function increaseFont(){
+            document.getElementById("font").style.fontSize = "3em";
+        }
+        function decreaseFont(){
+            document.getElementById("font").style.fontSize = "0.5em";
+        }
+
+        // display: none ise html elementi görünmez , display : block gösterir
+        
+        /* 
+        script bir klasörün içinde ise klasör ismini de yazmalıyız.ikı8
+        <script src="/js/myScript.js"><script>
+        
+        gizli değişkenler için ilk harf _ ile başlar. ör: let _id = 54;
+        
+        
+        {
+            curly bracets içinde  ( let ile ) tanımlanan değişkenlere dışarıdan erişilemez.
+        }
+        
+
+        */
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p id="font">Change my font size</p>
+        <button class="font-button" onclick="increaseFont()">Click to increase font size.</button>
+        <button class="font-button" onclick="decreaseFont()">Click to decrease font size.</button>
+    </div>
+</body>
+</html>
