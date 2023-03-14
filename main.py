@@ -86,6 +86,9 @@ def table():
     arr_as_list = randnums.tolist()
     return render_template("table.html",anArray = json.dumps(arr_as_list))
 
+@app.route('/getData')
+def getData():
+    return json.dumps("abcde")
 
     
 

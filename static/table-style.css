@@ -8,17 +8,10 @@
       table {
         border: 0.1em solid black;
       }
-      table th {
-        width: 16ch;
-        height: 16ch;
-      }
-      table tr {
-        width: 16ch;
-        height: 16ch;
-        border-bottom: 0.1em solid black;
-      }
       table tr th,
       table tr td {
+        width: 16ch;
+        height: 16ch;
         text-align: center;
       }
       table tr.days {
@@ -32,6 +25,16 @@
       }
       table tr.days th#null {
         background-color: rgb(248, 248, 248);
+      }
+      table tr td span.weekend{
+        transition-duration: 3s;
+        transform: rotate(210deg) 3s;
+        background-color: rgb(228, 89, 89);
+        font-size: 2em;
+        -ms-writing-mode: tb-rl;
+        -webkit-writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+        white-space: nowrap;
       }
       .button-container {
         margin-top: 4em;
