@@ -132,3 +132,24 @@ x &&= 5;  => x = x && 5
 // button.addEventListener("click", function() {
 //   console.log("The button was clicked!");
 // });
+
+// primitive types : 
+// numbers,strings, booleans , null , undefined, symbols 
+// primitive types lar stack de depolanır
+
+// **** javascript primitive olan stringi string objectine dönüştürür, böylece string object methodlarını 
+// kullanmak mümkün olur 
+
+// reference data types :
+// objects , functions , collections , arrays , dates . 
+// reference data types lar heap de tutulur, pointer'ı stackde tutulur
+// pointer object in variable name i ile tutulur ve heapte tutulan objecti işaretler
+
+// When you create a variable and assign it a value that is a reference data type, the computer does not directly store that data type in that variable (as is the case with primitive types).
+
+// Comparing two JavaScript objects always returns false.
+// ex: 
+const object1 = {name:"hakan",surname:"yarman"};
+const object2 = {name:"hakan",surname:"yarman"};
+console.log(object1==object2); // false
+console.log(object1===object2); // false
