@@ -158,6 +158,15 @@ fruits = ["apple","banana","orange","strawberry","cherry","melon","watermelon"]
 print(fruits[0:3]) # first three elements.
 print(fruits[::3]) #every third elements ex: index : 0,3,6,....
 print(fruits[::-1]) #negative(reverse) of list
+print(fruits[-1]) #last element.
+print(fruits[-3]) #3rd last element
+
+index = 0
+fruit = fruits[-1]
+while index < len(fruit):
+    letter = fruit[index]
+    print (letter)
+    index = index + 1
 
 for fruit in fruits:
     print(fruit)
@@ -173,3 +182,32 @@ fruits.append("grape")
 # to add element to end of the list
 
 fruits.insert(2, "mango") # add mango to fruits list's index of 2 
+
+#string slices
+
+string = "elmasuyu"
+sliced_string = string[0:4] # like array slice
+print(string[2:]) #prints characters which in  after the index of 2 
+
+# unlike arrays , strings ara immutable , we cant change letter of string.
+
+#  string[0] = "i"  #TypeError: 'str' object does not support item assignment
+
+#we can create a string that variation on the original and after we can modify this.
+new_string = 'i' + string[1:]
+print (new_string)
+
+
+word = 'banana'
+new_word = word.upper()
+print (new_word)
+
+
+index = word.find('n')
+print (index)
+ 
+#in operator
+
+print('n' in word) 
+#print true because word variable contains n letter.
+print('nana' in word) 
