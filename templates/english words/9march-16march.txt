@@ -1,0 +1,57 @@
+shiver : titremek
+perception : algı
+involve : içermek
+clerk : tezgahtar , çalışan
+loan : ödünç vermek , borç(noun)
+vague : belirsiz
+settle : yerleşmek , yerleştirmek , anlaşmak(deyim) , settlement: yerleşke
+occur : meydana gelmek , olmak ; occurence : gerçekleşen olay
+respond : yanıtlamak
+moderate : makul,ölçülü, orta halli ; moderation : orta yolu bulmak. ; moderator : yönetmek. 
+distunguish : ayırt etmek
+compound : birleştirmek
+strict : sıkı
+appropriate : uygun
+invoking : çağırmak
+concisely : kısaca
+conflict : çatışma , anlaşmazlık
+concise : özlü , kısa
+void : geçersiz , boş ,hükümsüz
+fruitful : bereketli
+corresponding : karşılık gelen
+stack : yığın
+terminate : sonlandırmak
+alter : değiştirmek
+ensure : emin olmak
+refrain : alıkoymak , sakınmak
+convention : ortak düşünce
+computation : hesaplama
+tradeoff : pazarlıksız
+redundant : gereksiz , lüzümsuz
+concatenation : birleştirme , birbirine bağlama
+acronym : kısaltma 
+precedence : öncelik , üstünlük
+arbitrarily : keyfi olarak
+parse : ayrıştırmak
+analogous : benzer
+token : jeton
+evolved : gelişmiş
+prompt : çabuk, hazır
+interpret : yorumlamak
+execute : uygulamak
+glossary : sözlük
+accomplish : sonuçlandırmak , başarmak , yerine getirmek(görev) ; accomplished: başarılmış
+nontrivial : önemsiz
+aspect : bakış açısı
+chunk : yığın ; chunks : parçalar
+incremental : artımlı
+subsequent : sonraki 
+indent : girinti
+tricky : hileli
+overwhelming : ezici
+misleading : yanıltıcı
+layout : düzen
+retrieve : geri almak
+iteration : yineleme , tekrarlanma
+lather : köpürtmek, köpük
+tempting : cazip

@@ -193,7 +193,7 @@ print(string[2:]) #prints characters which in  after the index of 2
 
 #  string[0] = "i"  #TypeError: 'str' object does not support item assignment
 
-#we can create a string that variation on the original and after we can modify this.
+#we can create a string that variation on the original and then we can modify this.
 new_string = 'i' + string[1:]
 print (new_string)
 
