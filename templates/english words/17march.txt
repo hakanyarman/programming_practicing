@@ -1,0 +1,5 @@
+installment : taksit
+circuit : devre
+inclination : eğilim
+congestion : tıkanıklık
+conduction : iletim

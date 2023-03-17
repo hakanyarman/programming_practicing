@@ -153,3 +153,9 @@ const object1 = {name:"hakan",surname:"yarman"};
 const object2 = {name:"hakan",surname:"yarman"};
 console.log(object1==object2); // false
 console.log(object1===object2); // false
+
+
+let text = "HELLO WORLD";
+text[0] = "A";    // Gives no error, but does not work
+
+// stringlerin değerini arraylerde olduğu gibi bu şekilde değiştiremeyiz.
