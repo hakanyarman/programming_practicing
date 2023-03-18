@@ -199,3 +199,12 @@ console.log(x); //Infinity
 // This is safe: 9007199254740991. This is not safe: 9007199254740992.
 Number.isSafeInteger(10); // true
 Number.isSafeInteger(12345678901234567890); // false
+
+console.log(` type of (100+23) is ${typeof((100 + 23).toString())}`);
+
+console.log(parseInt("18 pencil"));
+console.log(parseInt("pencil 18")); // NaN
+console.log(parseInt("-18.56")); // -18
+console.log(parseFloat("-18.56")); // -18.56
+
+

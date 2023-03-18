@@ -4,3 +4,4 @@ adequate : yeterli
 gradual : kademeli
 despair : çaresizlik
 literal : değişmez
+precision : kesinlik 

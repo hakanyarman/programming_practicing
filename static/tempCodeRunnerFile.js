@@ -1,2 +1,1 @@
-let x =  2 / 0;
-console.log(x);
+console.log(parseFloat("-18.56"));
