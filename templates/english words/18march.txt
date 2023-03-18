@@ -3,4 +3,4 @@ exhibit : sergilemek
 adequate : yeterli
 gradual : kademeli
 despair : çaresizlik
-    
+literal : değişmez
