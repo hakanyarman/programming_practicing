@@ -207,4 +207,19 @@ console.log(parseInt("pencil 18")); // NaN
 console.log(parseInt("-18.56")); // -18
 console.log(parseFloat("-18.56")); // -18.56
 
+// value swapping 
+// 1)DESTRUCTURING ASSIGNMENT
+let a = 5;
+let b = 7;
 
+[a,b] = [b,a];
+console.log(`the value of a after swapping : ${a} and the value of b after swapping : ${b}`);
+
+//2)TEMPORARY VARIABLE
+let q = 1;
+let w = 2;
+let temp;
+temp = q;
+q = w;
+w = temp;
+console.log(`the value of a after swapping : ${q} and the value of b after swapping : ${w}`);
