@@ -159,3 +159,43 @@ let text = "HELLO WORLD";
 text[0] = "A";    // Gives no error, but does not work
 
 // stringlerin değerini arraylerde olduğu gibi bu şekilde değiştiremeyiz.
+
+let price = 18;
+let VAT = 0.25;
+let total = `Total: ${(price * (4 + VAT))}`;
+
+
+// HTML Templates
+let header = "Templates Literals";
+let tags = ["template literals", "javascript", "es6"];
+
+let html = `<h2>${header}</h2><ol>`;
+for (const x of tags) {
+  html += `<li>${x}</li>`;
+}
+
+html += `</ol>`;
+
+document.writeln(html);         
+
+// let x = 0.2 + 0.1; neden 0.2+0.1 = 0.30000.....04 çıkıyor? sor 
+
+// NaN - Not a Number . ex: 100 / "Apple" is NaN
+// let y = 100 / "10"; it is not NaN. result is 10.
+
+// isNaN()  => a global javascript function.
+
+// console.log(isNaN(y)); => false
+
+// typeof(NaN) => number .? neden sor ?
+
+let x =  2 / 0;
+console.log(x); //Infinity
+// Infinity is the largest possible number in javascript.
+// typeof(Infinity) => number 
+
+
+// Safe integers are all integers from -(253 - 1) to +(253 - 1).
+// This is safe: 9007199254740991. This is not safe: 9007199254740992.
+Number.isSafeInteger(10); // true
+Number.isSafeInteger(12345678901234567890); // false
