@@ -239,4 +239,67 @@ type of john is ${typeof("john")}
 `
 
 // w3 de js examples kısmında javascript strings e kadar geldim.
-// w3 normal tutoriolda number properties e kadar geldim.
+
+
+
+//forEach() 
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let text = "<ul>";
+fruits.forEach(myFunction); // fruits array indeki her bir eleman için myFunction fonksiyonunu çağırdı
+// callback function
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+//-------------------------------------------------
+
+
+const nums = [1, 2, 3];
+
+nums.forEach(num => console.log(num));
+//-------------------------------------------------
+
+let sum = 0;
+const numbers = [65, 44, 12, 4];
+numbers.forEach(myFunction);
+
+function myFunction(item) {
+  sum += item;
+}
+console.log(sum);
+//-------------------------------------------------
+
+const numbers2 = [65, 44, 12, 4];
+numbers2.forEach(myFunction2)
+
+function myFunction2(item, index, arr) {
+  arr[index] = item * 10;
+}
+console.log(numbers2);
+//-------------------------------------------------
+// forEach with arrow function
+const students = ['John', 'Sara', 'Jack'];
+
+students.forEach(element => {
+  console.log(element);
+});
+
+//---------------,----------------------------------
+const myArray = [9,8,7,6];
+myArray[8] = 78;
+console.log(myArray); //[ 9, 8, 7, 6, <4 empty items>, 78 ]
+// aradaki indexler de empty items oluştu.
+//---------------,----------------------------------
+
+// type of array is object 
+console.log(typeof myArray); // object
+// peki bir şeyin array olup olmadığını nasıl anlayacağız?
+// isArray() metodu ile 
+console.log(Array.isArray(myArray)); // true
+// veya instance of Array kullanılır.
+console.log(myArray instanceof Array);
+
+
