@@ -223,3 +223,20 @@ temp = q;
 q = w;
 w = temp;
 console.log(`the value of a after swapping : ${q} and the value of b after swapping : ${w}`);
+
+// inner html' in içindeki html kodlarını "" içinde , javascript kodunu olduğu gibi yazarız
+// veya ikisini de ` ` ters tırnak içinde yazarız, javascript kodları için ${} oluştururuz. 
+document.getElementById("paragraph").innerHTML = 
+typeof ("") + "<br>" +
+typeof ("John") + "<br>" + 
+typeof ("John Doe") + "<br>" +
+typeof (0) + "<br>" 
+// veya 
+
+document.getElementById("paragraph").innerHTML = 
+`
+type of john is ${typeof("john")} 
+`
+
+// w3 de js examples kısmında javascript strings e kadar geldim.
+// w3 normal tutoriolda number properties e kadar geldim.
