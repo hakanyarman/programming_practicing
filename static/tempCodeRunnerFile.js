@@ -1,7 +1,13 @@
-let q = 1;
-let w = 2;
-let temp;
-temp = q;
-q = w;
-w = temp;
-console.log(`the value of a after swapping : ${q} and the value of b after swapping : ${w}`);
+const myArray = [9,8,7,6];
+myArray[8] = 78;
+console.log(myArray); //[ 9, 8, 7, 6, <4 empty items>, 78 ]
+// aradaki indexler de empty items oluştu.
+//---------------,----------------------------------
+
+// type of array is object 
+console.log(typeof myArray); // object
+// peki bir şeyin array olup olmadığını nasıl anlayacağız?
+// isArray() metodu ile 
+console.log(Array.isArray(myArray)); // true
+// veya instance of Array kullanılır.
+console.log(myArray instanceof Array);
