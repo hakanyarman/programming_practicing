@@ -3,3 +3,6 @@ obtain : elde etmek
 carve : oymak
 pretend : numara yapmak, yalandan yapmak
 insert : eklemek,girmek.
+splice : birbirine eklemek // array.splice() => array e eleman ekler
+omit : atlamak , ihmal etmek.
+equivalent : eşdeğer.

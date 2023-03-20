@@ -242,7 +242,7 @@ type of john is ${typeof("john")}
 
 
 
-//forEach() 
+//forEach()  => array iteration method dur.
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
@@ -275,8 +275,8 @@ console.log(sum);
 const numbers2 = [65, 44, 12, 4];
 numbers2.forEach(myFunction2)
 
-function myFunction2(item, index, arr) {
-  arr[index] = item * 10;
+function myFunction2(item, index, arr) { // foreach methodu 3 parametre alır. item,index ve array.
+  arr[index] = item * 10; 
 }
 console.log(numbers2);
 //-------------------------------------------------
@@ -303,3 +303,171 @@ console.log(Array.isArray(myArray)); // true
 console.log(myArray instanceof Array);
 
 
+console.log(0.1+0.2); // 0.30000000000000004
+
+//ARRAY METHODS:
+
+// converting array to string:
+const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(`${fruits2.toString()}, type of fruits after the converting is ${typeof(fruits2.toString())}`)
+// arrayler bu şekilde stringe dönüştürülebilir.
+
+// join method
+console.log(fruits2.join("-"));
+// array elemanlarını bir stringde toplar. ama join in aldığı parametreyi aralarına koyar.
+
+// pop() arraydeki son elemanı siler ; shift ilk elemanı siler. unshift() ilk index e eleman ekler.
+
+// iki array i birleştirmek: concat()
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+const yourBoys = ["ali","veli","mehmet"];
+
+const myChildren = myGirls.concat(myBoys);
+console.log(myChildren);
+console.log(myGirls.concat(myBoys,yourBoys)); // 3 arrayi birleştirme
+
+
+// arr.sort() method
+const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits3.sort()); // alfabetik sıraya göre dizdi.
+console.log(fruits3); // ve arrayi ona göre değiştirdi. artık array her zaman böyle.
+fruits3.reverse(); // array sıralamasını tam tersi olarak değiştirdi.
+console.log(fruits3); 
+
+// sort method'u number ları sıralamada doğru çalışmaz
+const numbers4 = [5,35,17,9];
+numbers4.sort();
+console.log(numbers4); // [ 17, 35, 5, 9 ] çünkü 35 olarak algılamaz ,35 in 3 ünü alır,
+// 5 den küçük olduğu için öne atar
+
+// çözüm olarak bu şekilde kullanabiliriz
+numbers4.sort(function(a, b){return a - b}); // [ 5, 9, 17, 35 ]
+//now min value : numbers[0] ; max value : numbers[numbers.length-1]
+// azalan sıraya göre sıralamak için: 
+numbers4.sort(function(a, b){return b - a}); // [ 35, 17, 9, 5 ]
+//now max value : numbers[0] ; min value : numbers[numbers.length-1]
+console.log(numbers4); 
+
+// array.map() methodu  
+// array iteration method dur.
+// orijinal array i değiştirmez.
+// içine yazılan fonksiyonun işlevini array'in HER BİR elemanI için uygulayıp yeni array oluşturur.
+// map() içine callback function alır. foreach gibi. parametreleri de aynıdır . value,index,array.
+// sadece value yani ilk parametre yazıldığı durumlarda index ve array parametreleri atlanır.
+
+// array.filter() metodu
+// arraydeki her eleman için yazdığımız koşulu kontrol eder ; eğer koşulu sağlamıyorsa 
+// yeni oluşturduğu arrayden o elamanları siler.
+
+const ints = [1,2,3];
+const evens = ints.filter(function(item){
+  return (item%2==0)
+});
+console.log(evens);
+
+// tüm array iteration methodları içine callback function alır
+
+console.log(Boolean("")); // empty string in boolean ı false dur
+
+// 20 dk. + 20 dk + 35dk
+
+// ternary conditional operator
+const age = 20;
+const age_group = age>=18 ? "Adult" : "Child";
+console.log(age_group); 
+
+// 2 < "12" =>true  : çünkü number olan 2 string olan "12" yi numbera dönüşmesi için zorladı.
+// burada "12" yi number olarak algıladı.
+
+//"2" < "12" =>	false : burada ikisi de string olduğu için. number'a dönüşmediler. 2 , 12nin ilk basamağı olan
+// 1 den daha küçük olmadığı için false döndü
+
+// "3" < "45" => true : çünkü 3 , 45in ilk basamağı olan 4 den daha küçük.
+console.log("8"<"123"); // false
+
+//The Nullish Coalescing Operator (??)
+
+let name = null;
+let text = "missing";
+let result = name ?? text;
+console.log(result); // eğer 1.parametre null ise 2. parametreyi alır.
+
+// The Optional Chaining Operator (?.)
+//eğer bir object undefined veya null ise hata vermeden undefined/null yazdırır.
+// undefined veya null değilse normalde olduğu gibi değerini yazdırır
+const car = {type:"Fiat", model:"500", color:"white"};
+console.log(car?.name); // undefined
+console.log(car?.type); // Fiat
+
+//-----------------------------------------------
+// switch-case
+// The default case does not have to be the last case in a switch block:,
+switch (new Date().getDay()) {
+  default:
+    text = "Looking forward to the Weekend";
+    break;
+  case 6:
+    text = "Today is Saturday";
+    break;
+  case 0:
+    text = "Today is Sunday";
+}
+/////////////////////////
+switch (new Date().getDay()) {
+  case 4:
+  case 5: // aynı kod bloğunda birden çok case yazılabilir.
+  // burada case 4 veya 5 ise text = "Soon it is Weekend" olur.
+    text = "Soon it is Weekend";
+    break;
+  case 0:
+  case 6:
+    text = "It is Weekend";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}
+// multiple case
+switch (new Date().getDay()) {
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+    text = "bugün haftaiçi";
+    break;
+  default:
+    text = "bugün haftasonu";
+}
+console.log(text);
+
+// for/in - loops through the properties of an object
+// for/of - loops through the values of an iterable object
+
+const cars=[];
+for (let i = 0, len = cars.length, text = ""; i < len; i++) {
+  text += cars[i] + "<br>";
+}
+// for un içinde birçok değer atanabilir.
+// ancak bu değerleri let ile atadıysan değerler sadece for kod bloğu içinden erişilebilir.
+// var ile atadıysan kod bloğu dışından da erişilebilir.
+
+var i = 5;
+for (var i = 0; i < 10; i++) {
+  // some code
+}
+// Here i is 10
+
+//----------------------
+let i = 5;
+
+for (let i = 0; i < 10; i++) {
+  // some code
+}
+
+// Here i is 5
+
+//---------------------------
+// for(;;) => sonsuz döngü.
+
+// for in - for of da kaldım.
