@@ -2,4 +2,4 @@ abolish : ortadan kaldırmak , feshetmek , iptal etmek
 absence : yokluk , bulunmama
 adjacent : komşu , bitişik
 migration : göç
-harbor : liman
+harbor : liman.
