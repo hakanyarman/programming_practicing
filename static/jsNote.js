@@ -5,6 +5,8 @@
 // console.log(x);
 // ReferenceError: x is not defined
 
+const { set } = require("mongoose");
+
 // curly bracets içinde  ( let ile ) tanımlanan değişkenlere dışarıdan erişilemez.
 // const için de aynı durum geçerli.
 // ama var ile tanımlanan değişkenlere dışarıdan erişilebilir
@@ -471,3 +473,105 @@ for (let i = 0; i < 10; i++) {
 // for(;;) => sonsuz döngü.
 
 // for in - for of da kaldım.
+
+// for in 
+const person = {fname:"John", lname:"Doe", age:25};
+
+let text = "";
+let properties = "";
+for (let x in person) {
+  text += person[x];
+  properties += x+ " ";
+} 
+console.log(text);
+console.log(properties);
+// for in döngüsü bir object in propertie leri arasında döner.
+
+// for of 
+// object , array veya stringin her değeri için döner 
+// object için:
+
+const cars2= ["BMW", "Volvo", "Mini"];
+
+let text2 = "";
+for (let x of cars2) {
+  text2 += x + " ";
+}
+console.log(text2);
+
+//string için
+
+let language = "JavaScript";
+
+let text = "";
+for (let x of language) {
+text += x; // burada x language stringinin her bir harfi.
+}
+console.log(text);
+
+//break - continue
+// break : döngüyü tamamen kırar
+// continue : döngünün o tekrarını geçer , döngünün başına döner.
+for(let i =0;i<5;i++){
+  if(i===2){
+    continue; // 2 yi atladı
+  }
+  console.log(i);
+}
+
+for(let i =0;i<5;i++){
+  if(i===3){
+    break; // 3 e geldiğinde döngüyü kırdı.
+  }
+  console.log(i);
+}
+
+
+
+// set-array-map
+// set , unique elemanları içerir. aynı olan array elemanlarını siler 1 tane bırakır.
+const myArr = [1,2,3,4,5,5,5,1,2];
+const mySet = new Set(myArr);
+const mySet2 = new Set([1,2,3]);
+const uniqueArr = [...mySet];
+
+console.log(mySet); // Set(5) { 1, 2, 3, 4, 5 }
+console.log(myArr);  // [ 1, 2, 3, 4, 5, 5, 5, 1, 2]
+
+console.log(uniqueArr); // [ 1, 2, 3, 4, 5 ];
+
+// set'in içine primitive value veya object ve array de ekleyebiliriz. add komutu ile.
+mySet.add(6); 
+// mySet.add(7,8,9,10); // birden fazla elemanı aynı anda eklemeye izin vermez. 
+console.log(mySet); // Set(6) { 1, 2, 3, 4, 5, 6 }
+
+mySet.add({myName:"Hakan" , lastName:"Yarman"}); //object de eklenebilir.
+const array = ["a","b","c"]
+mySet.add(array); // array de eklenebilir.
+console.log(mySet);
+
+// delete set eleman.
+mySet.delete(array);
+mySet.delete(6)
+console.log(mySet);
+
+// clear set
+// mySet.clear(); // clear all set eleman (not the set itself) , no need parameter.
+// after the clearing mySet still exist.
+console.log(mySet); //Set(0) {}
+
+// set.has() içine yazdığımız parametre set içinde bulunuyor mu? //return true or false
+const doesInclude2 = mySet.has(2);
+console.log(doesInclude2);
+// set.size
+console.log(mySet.size);
+
+//differences between array and set:
+// array ordered objectler den oluşur; bu yüzden index numarasına göre erişebiliriz.
+// ama set deki elemanlara index numarası ile erişemeyiz.
+console.log(myArr[1]);
+console.log(mySet[1]); // undefined
+
+
+
+ 
