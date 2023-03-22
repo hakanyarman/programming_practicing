@@ -1,3 +1,2 @@
-const books = ["A","B","C"];
-console.log(books instanceof Array);
-console.log(books instanceof Object);
+const pattern = /emre/i;
+console.log(pattern.test("Emre belezoğlu fenerbahçelidir"));
