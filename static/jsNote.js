@@ -647,3 +647,56 @@ console.log(books instanceof String); // false
 //  javascript void
 
 //   anchor tagleri arasındaki hrefe bir şey return etmeyen fonksiyon yazmamızı sağlar
+
+//------------------ type conversion --------------------------
+console.log(Number(" "),Number("")); // 0 0 
+// boş stringin numbera dönüşümü 0 dır.
+
+// string bir number ın başına + koyarsak type ı number olur.
+let y= "5";      // y is a string
+let x = + y;      // x is a number
+console.log(typeof y , typeof x );
+
+// toExponential() üstel görünüme çevirir
+console.log((1000000000).toExponential(),typeof((1000000000).toExponential())); //1e+9 string
+
+
+console.log(Boolean("")); //false
+console.log(Boolean([])); //true. boş arrayin boolean ı true olur.
+console.log(Boolean({})); //true. boş objectin boolean ı true olur.
+
+//-----------------regular expressions (RegEx)----------------------
+// genellikle search ve replace metotları ile beraber kullanılırlar.
+//  syntax:  /pattern/modifiers; 
+// pattern: aranacak data. 
+/w3schools/i
+
+let text = "Visit W3Schools!";
+let n = text.search("W3Schools");
+console.log(n); //W3Schools un hangi indexde olduğunu söyledi(case sensitive olarak).
+
+let n2 = text.search(/w3schools/i); // i : insensitive
+console.log(n2); // küçük-büyük harf ayırt etmeksizin ayırdı
+
+// regexin içine çift tırnak koyulmaz.
+
+let text2 = text.replace(/visit/i,"ziyaret et"); //insensitive şekilde visit i buldu ve 
+//2. parametre ile değiştirdi.
+console.log(text2);
+
+
+//modifiers:
+// i : insensitive
+// g: global ; yani yazılan değeri ilk bulduktan sonra durmaz, hepsini bulur.
+
+let text3 = "hakan ın hakan adında bir arkadaşı var ";
+let tex4 = text3.match(/hakan/g);
+console.log(tex4); //[ 'hakan', 'hakan' ]
+
+// test()
+
+const pattern = /emre/i;
+console.log(pattern.test("Emre belezoğlu fenerbahçelidir")); //true
+// çünkü stringin içinde yazdığımız pattern yani emre bulunuyor.
+
+// w3 errors da kaldım.
