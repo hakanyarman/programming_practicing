@@ -19,5 +19,15 @@
       document.writeln(html);
     </script>
   </head>
-  <body></body>
+  <body>
+<!-- javascript void -->
+<!-- 
+  anchor tagleri arasındaki hrefe bir şey return etmeyen fonksiyon yazmamızı sağlar 
+ -->
+    <p> <a href="javascript:void(console.log('i am clicked'))" >click me</a> </p>
+
+    <a href="javascript:void(document.body.style.backgroundColor='red');">
+      Click me to change the background color of body to red
+    </a>
+  </body>
 </html>

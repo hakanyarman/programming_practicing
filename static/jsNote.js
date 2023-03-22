@@ -11,7 +11,6 @@ const { set } = require("mongoose");
 // const için de aynı durum geçerli.
 // ama var ile tanımlanan değişkenlere dışarıdan erişilebilir
 
-
 /* 
         script bir klasörün içinde ise klasör ismini de yazmalıyız.
         <script src="/js/myScript.js"><script>
@@ -31,7 +30,6 @@ const { set } = require("mongoose");
 
 // yeni bir array , object , function oluşturduğunda const kullan.
 
-
 // Bitwise operators (unknown)
 //  ~ : 	NOT
 // ^	XOR : exclusive or (özel veya kapısı )    (x ^ y) =   (x && !y) || (!x && y)
@@ -48,12 +46,11 @@ x &&= 5;  => x = x && 5
 // 3) date : const date = new Date("2022-03-25");
 
 // console.log(13 + "merhaba") => '13merhaba' : string
- 
+
 // let x = 16 + 4 + "Volvo"; strine ulaşıncaya kadar number olarak davrandı(16 ile 4ü topladı) sonra stringe döndü
 // let x = "Volvo" + 16 + 4; ilk string olduğu için hepsini stringe çevirdi
 
 // let answer = "He is called 'Johnny'"; => string içinde tırnak işareti kullanacağımız zaman böyle kullanırız.
-
 
 // in other languages:
 // byte (8-bit), short (16-bit), int (32-bit), long (64-bit) , float (32-bit), double (64-bit).
@@ -83,13 +80,11 @@ x &&= 5;  => x = x && 5
 // Accessing a function without () will return the function object instead of the function result.
 
 // OBJECTS:
-// object : car 
+// object : car
 // properties : model , color , engine .....
 // methods : drive() , brake()
 
 //  method : functions in a class or object
-
-
 
 // const person = {
 //   firstName: "John",
@@ -135,37 +130,35 @@ x &&= 5;  => x = x && 5
 //   console.log("The button was clicked!");
 // });
 
-// primitive types : 
-// numbers,strings, booleans , null , undefined, symbols 
+// primitive types :
+// numbers,strings, booleans , null , undefined, symbols
 // primitive types lar stack de depolanır
 
-// **** javascript primitive olan stringi string objectine dönüştürür, böylece string object methodlarını 
-// kullanmak mümkün olur 
+// **** javascript primitive olan stringi string objectine dönüştürür, böylece string object methodlarını
+// kullanmak mümkün olur
 
 // reference data types :
-// objects , functions , collections , arrays , dates . 
+// objects , functions , collections , arrays , dates .
 // reference data types lar heap de tutulur, pointer'ı stackde tutulur
 // pointer object in variable name i ile tutulur ve heapte tutulan objecti işaretler
 
 // When you create a variable and assign it a value that is a reference data type, the computer does not directly store that data type in that variable (as is the case with primitive types).
 
 // Comparing two JavaScript objects always returns false.
-// ex: 
-const object1 = {name:"hakan",surname:"yarman"};
-const object2 = {name:"hakan",surname:"yarman"};
-console.log(object1==object2); // false
-console.log(object1===object2); // false
-
+// ex:
+const object1 = { name: "hakan", surname: "yarman" };
+const object2 = { name: "hakan", surname: "yarman" };
+console.log(object1 == object2); // false
+console.log(object1 === object2); // false
 
 let text = "HELLO WORLD";
-text[0] = "A";    // Gives no error, but does not work
+text[0] = "A"; // Gives no error, but does not work
 
 // stringlerin değerini arraylerde olduğu gibi bu şekilde değiştiremeyiz.
 
 let price = 18;
 let VAT = 0.25;
-let total = `Total: ${(price * (4 + VAT))}`;
-
+let total = `Total: ${price * (4 + VAT)}`;
 
 // HTML Templates
 let header = "Templates Literals";
@@ -178,9 +171,9 @@ for (const x of tags) {
 
 html += `</ol>`;
 
-document.writeln(html);         
+document.writeln(html);
 
-// let x = 0.2 + 0.1; neden 0.2+0.1 = 0.30000.....04 çıkıyor? sor 
+// let x = 0.2 + 0.1; neden 0.2+0.1 = 0.30000.....04 çıkıyor? sor
 
 // NaN - Not a Number . ex: 100 / "Apple" is NaN
 // let y = 100 / "10"; it is not NaN. result is 10.
@@ -191,31 +184,32 @@ document.writeln(html);
 
 // typeof(NaN) => number .? neden sor ?
 
-let x =  2 / 0;
+let x = 2 / 0;
 console.log(x); //Infinity
 // Infinity is the largest possible number in javascript.
-// typeof(Infinity) => number 
-
+// typeof(Infinity) => number
 
 // Safe integers are all integers from -(253 - 1) to +(253 - 1).
 // This is safe: 9007199254740991. This is not safe: 9007199254740992.
 Number.isSafeInteger(10); // true
 Number.isSafeInteger(12345678901234567890); // false
 
-console.log(` type of (100+23) is ${typeof((100 + 23).toString())}`);
+console.log(` type of (100+23) is ${typeof (100 + 23).toString()}`);
 
 console.log(parseInt("18 pencil"));
 console.log(parseInt("pencil 18")); // NaN
 console.log(parseInt("-18.56")); // -18
 console.log(parseFloat("-18.56")); // -18.56
 
-// value swapping 
+// value swapping
 // 1)DESTRUCTURING ASSIGNMENT
 let a = 5;
 let b = 7;
 
-[a,b] = [b,a];
-console.log(`the value of a after swapping : ${a} and the value of b after swapping : ${b}`);
+[a, b] = [b, a];
+console.log(
+  `the value of a after swapping : ${a} and the value of b after swapping : ${b}`
+);
 
 //2)TEMPORARY VARIABLE
 let q = 1;
@@ -224,25 +218,28 @@ let temp;
 temp = q;
 q = w;
 w = temp;
-console.log(`the value of a after swapping : ${q} and the value of b after swapping : ${w}`);
+console.log(
+  `the value of a after swapping : ${q} and the value of b after swapping : ${w}`
+);
 
 // inner html' in içindeki html kodlarını "" içinde , javascript kodunu olduğu gibi yazarız
-// veya ikisini de ` ` ters tırnak içinde yazarız, javascript kodları için ${} oluştururuz. 
-document.getElementById("paragraph").innerHTML = 
-typeof ("") + "<br>" +
-typeof ("John") + "<br>" + 
-typeof ("John Doe") + "<br>" +
-typeof (0) + "<br>" 
-// veya 
+// veya ikisini de ` ` ters tırnak içinde yazarız, javascript kodları için ${} oluştururuz.
+document.getElementById("paragraph").innerHTML =
+  typeof "" +
+  "<br>" +
+  typeof "John" +
+  "<br>" +
+  typeof "John Doe" +
+  "<br>" +
+  typeof 0 +
+  "<br>";
+// veya
 
-document.getElementById("paragraph").innerHTML = 
-`
-type of john is ${typeof("john")} 
-`
+document.getElementById("paragraph").innerHTML = `
+type of john is ${typeof "john"} 
+`;
 
 // w3 de js examples kısmında javascript strings e kadar geldim.
-
-
 
 //forEach()  => array iteration method dur.
 
@@ -258,10 +255,9 @@ function myFunction(value) {
 }
 //-------------------------------------------------
 
-
 const nums = [1, 2, 3];
 
-nums.forEach(num => console.log(num));
+nums.forEach((num) => console.log(num));
 //-------------------------------------------------
 
 let sum = 0;
@@ -275,43 +271,45 @@ console.log(sum);
 //-------------------------------------------------
 
 const numbers2 = [65, 44, 12, 4];
-numbers2.forEach(myFunction2)
+numbers2.forEach(myFunction2);
 
-function myFunction2(item, index, arr) { // foreach methodu 3 parametre alır. item,index ve array.
-  arr[index] = item * 10; 
+function myFunction2(item, index, arr) {
+  // foreach methodu 3 parametre alır. item,index ve array.
+  arr[index] = item * 10;
 }
 console.log(numbers2);
 //-------------------------------------------------
 // forEach with arrow function
-const students = ['John', 'Sara', 'Jack'];
+const students = ["John", "Sara", "Jack"];
 
-students.forEach(element => {
+students.forEach((element) => {
   console.log(element);
 });
 
 //---------------,----------------------------------
-const myArray = [9,8,7,6];
+const myArray = [9, 8, 7, 6];
 myArray[8] = 78;
 console.log(myArray); //[ 9, 8, 7, 6, <4 empty items>, 78 ]
 // aradaki indexler de empty items oluştu.
 //---------------,----------------------------------
 
-// type of array is object 
+// type of array is object
 console.log(typeof myArray); // object
 // peki bir şeyin array olup olmadığını nasıl anlayacağız?
-// isArray() metodu ile 
+// isArray() metodu ile
 console.log(Array.isArray(myArray)); // true
 // veya instance of Array kullanılır.
 console.log(myArray instanceof Array);
 
-
-console.log(0.1+0.2); // 0.30000000000000004
+console.log(0.1 + 0.2); // 0.30000000000000004
 
 //ARRAY METHODS:
 
 // converting array to string:
 const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
-console.log(`${fruits2.toString()}, type of fruits after the converting is ${typeof(fruits2.toString())}`)
+console.log(
+  `${fruits2.toString()}, type of fruits after the converting is ${typeof fruits2.toString()}`
+);
 // arrayler bu şekilde stringe dönüştürülebilir.
 
 // join method
@@ -323,35 +321,38 @@ console.log(fruits2.join("-"));
 // iki array i birleştirmek: concat()
 const myGirls = ["Cecilie", "Lone"];
 const myBoys = ["Emil", "Tobias", "Linus"];
-const yourBoys = ["ali","veli","mehmet"];
+const yourBoys = ["ali", "veli", "mehmet"];
 
 const myChildren = myGirls.concat(myBoys);
 console.log(myChildren);
-console.log(myGirls.concat(myBoys,yourBoys)); // 3 arrayi birleştirme
-
+console.log(myGirls.concat(myBoys, yourBoys)); // 3 arrayi birleştirme
 
 // arr.sort() method
 const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits3.sort()); // alfabetik sıraya göre dizdi.
 console.log(fruits3); // ve arrayi ona göre değiştirdi. artık array her zaman böyle.
 fruits3.reverse(); // array sıralamasını tam tersi olarak değiştirdi.
-console.log(fruits3); 
+console.log(fruits3);
 
 // sort method'u number ları sıralamada doğru çalışmaz
-const numbers4 = [5,35,17,9];
+const numbers4 = [5, 35, 17, 9];
 numbers4.sort();
 console.log(numbers4); // [ 17, 35, 5, 9 ] çünkü 35 olarak algılamaz ,35 in 3 ünü alır,
 // 5 den küçük olduğu için öne atar
 
 // çözüm olarak bu şekilde kullanabiliriz
-numbers4.sort(function(a, b){return a - b}); // [ 5, 9, 17, 35 ]
+numbers4.sort(function (a, b) {
+  return a - b;
+}); // [ 5, 9, 17, 35 ]
 //now min value : numbers[0] ; max value : numbers[numbers.length-1]
-// azalan sıraya göre sıralamak için: 
-numbers4.sort(function(a, b){return b - a}); // [ 35, 17, 9, 5 ]
+// azalan sıraya göre sıralamak için:
+numbers4.sort(function (a, b) {
+  return b - a;
+}); // [ 35, 17, 9, 5 ]
 //now max value : numbers[0] ; min value : numbers[numbers.length-1]
-console.log(numbers4); 
+console.log(numbers4);
 
-// array.map() methodu  
+// array.map() methodu
 // array iteration method dur.
 // orijinal array i değiştirmez.
 // içine yazılan fonksiyonun işlevini array'in HER BİR elemanI için uygulayıp yeni array oluşturur.
@@ -359,12 +360,12 @@ console.log(numbers4);
 // sadece value yani ilk parametre yazıldığı durumlarda index ve array parametreleri atlanır.
 
 // array.filter() metodu
-// arraydeki her eleman için yazdığımız koşulu kontrol eder ; eğer koşulu sağlamıyorsa 
+// arraydeki her eleman için yazdığımız koşulu kontrol eder ; eğer koşulu sağlamıyorsa
 // yeni oluşturduğu arrayden o elamanları siler.
 
-const ints = [1,2,3];
-const evens = ints.filter(function(item){
-  return (item%2==0)
+const ints = [1, 2, 3];
+const evens = ints.filter(function (item) {
+  return item % 2 == 0;
 });
 console.log(evens);
 
@@ -376,8 +377,8 @@ console.log(Boolean("")); // empty string in boolean ı false dur
 
 // ternary conditional operator
 const age = 20;
-const age_group = age>=18 ? "Adult" : "Child";
-console.log(age_group); 
+const age_group = age >= 18 ? "Adult" : "Child";
+console.log(age_group);
 
 // 2 < "12" =>true  : çünkü number olan 2 string olan "12" yi numbera dönüşmesi için zorladı.
 // burada "12" yi number olarak algıladı.
@@ -386,7 +387,7 @@ console.log(age_group);
 // 1 den daha küçük olmadığı için false döndü
 
 // "3" < "45" => true : çünkü 3 , 45in ilk basamağı olan 4 den daha küçük.
-console.log("8"<"123"); // false
+console.log("8" < "123"); // false
 
 //The Nullish Coalescing Operator (??)
 
@@ -398,7 +399,7 @@ console.log(result); // eğer 1.parametre null ise 2. parametreyi alır.
 // The Optional Chaining Operator (?.)
 //eğer bir object undefined veya null ise hata vermeden undefined/null yazdırır.
 // undefined veya null değilse normalde olduğu gibi değerini yazdırır
-const car = {type:"Fiat", model:"500", color:"white"};
+const car = { type: "Fiat", model: "500", color: "white" };
 console.log(car?.name); // undefined
 console.log(car?.type); // Fiat
 
@@ -419,7 +420,7 @@ switch (new Date().getDay()) {
 switch (new Date().getDay()) {
   case 4:
   case 5: // aynı kod bloğunda birden çok case yazılabilir.
-  // burada case 4 veya 5 ise text = "Soon it is Weekend" olur.
+    // burada case 4 veya 5 ise text = "Soon it is Weekend" olur.
     text = "Soon it is Weekend";
     break;
   case 0:
@@ -446,7 +447,7 @@ console.log(text);
 // for/in - loops through the properties of an object
 // for/of - loops through the values of an iterable object
 
-const cars=[];
+const cars = [];
 for (let i = 0, len = cars.length, text = ""; i < len; i++) {
   text += cars[i] + "<br>";
 }
@@ -474,24 +475,24 @@ for (let i = 0; i < 10; i++) {
 
 // for in - for of da kaldım.
 
-// for in 
-const person = {fname:"John", lname:"Doe", age:25};
+// for in
+const person = { fname: "John", lname: "Doe", age: 25 };
 
 let text = "";
 let properties = "";
 for (let x in person) {
   text += person[x];
-  properties += x+ " ";
-} 
+  properties += x + " ";
+}
 console.log(text);
 console.log(properties);
 // for in döngüsü bir object in propertie leri arasında döner.
 
-// for of 
-// object , array veya stringin her değeri için döner 
+// for of
+// object , array veya stringin her değeri için döner
 // object için:
 
-const cars2= ["BMW", "Volvo", "Mini"];
+const cars2 = ["BMW", "Volvo", "Mini"];
 
 let text2 = "";
 for (let x of cars2) {
@@ -505,54 +506,52 @@ let language = "JavaScript";
 
 let text = "";
 for (let x of language) {
-text += x; // burada x language stringinin her bir harfi.
+  text += x; // burada x language stringinin her bir harfi.
 }
 console.log(text);
 
 //break - continue
 // break : döngüyü tamamen kırar
 // continue : döngünün o tekrarını geçer , döngünün başına döner.
-for(let i =0;i<5;i++){
-  if(i===2){
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
     continue; // 2 yi atladı
   }
   console.log(i);
 }
 
-for(let i =0;i<5;i++){
-  if(i===3){
+for (let i = 0; i < 5; i++) {
+  if (i === 3) {
     break; // 3 e geldiğinde döngüyü kırdı.
   }
   console.log(i);
 }
 
-
-
 // set-array-map
 // set , unique elemanları içerir. aynı olan array elemanlarını siler 1 tane bırakır.
-const myArr = [1,2,3,4,5,5,5,1,2];
+const myArr = [1, 2, 3, 4, 5, 5, 5, 1, 2];
 const mySet = new Set(myArr);
-const mySet2 = new Set([1,2,3]);
+const mySet2 = new Set([1, 2, 3]);
 const uniqueArr = [...mySet];
 
 console.log(mySet); // Set(5) { 1, 2, 3, 4, 5 }
-console.log(myArr);  // [ 1, 2, 3, 4, 5, 5, 5, 1, 2]
+console.log(myArr); // [ 1, 2, 3, 4, 5, 5, 5, 1, 2]
 
 console.log(uniqueArr); // [ 1, 2, 3, 4, 5 ];
 
 // set'in içine primitive value veya object ve array de ekleyebiliriz. add komutu ile.
-mySet.add(6); 
-// mySet.add(7,8,9,10); // birden fazla elemanı aynı anda eklemeye izin vermez. 
+mySet.add(6);
+// mySet.add(7,8,9,10); // birden fazla elemanı aynı anda eklemeye izin vermez.
 console.log(mySet); // Set(6) { 1, 2, 3, 4, 5, 6 }
 
-mySet.add({myName:"Hakan" , lastName:"Yarman"}); //object de eklenebilir.
-const array = ["a","b","c"]
+mySet.add({ myName: "Hakan", lastName: "Yarman" }); //object de eklenebilir.
+const array = ["a", "b", "c"];
 mySet.add(array); // array de eklenebilir.
 console.log(mySet);
 
 // delete set eleman.
 mySet.delete(array);
-mySet.delete(6)
+mySet.delete(6);
 console.log(mySet);
 
 // clear set
@@ -572,6 +571,79 @@ console.log(mySet.size);
 console.log(myArr[1]);
 console.log(mySet[1]); // undefined
 
+//map
+// javascript object sadece 1 key li objectleri destekler,eğer birden çok key koyarsak;
+// sadece son keyi hatırlar , bu sorunu ortadan kaldırmak için map kullanırız.
+// map de key herhangi bir veri tipinde olabilir
+// map.set() => map deki bir keyin value sunu tanımlar
+// map.get() => map deki bir keyin value sunu getirir
 
+const myMap = new Map([
+  ["name", "hakan"],
+  ["surname", "yarman"],
+]);
+console.log(myMap); // Map(2) { 'name' => 'hakan', 'surname' => 'yarman' }
 
- 
+const myObject = {};
+
+const a = {};
+const b = {};
+
+myObject[a] = "a";
+myObject[b] = "b";
+console.log(myObject); // { '[object Object]': 'b' }
+
+const myMap2 = [
+  [a, "a"],
+  [b, "b"],
+]; // birden çok key i tutar.
+console.log(myMap2); // [ [ {}, 'a' ], [ {}, 'b' ] ]
+
+const meyveler = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200],
+]);
+meyveler.set("pineapples", 450);
+meyveler.set("apples", 250);
+console.log(meyveler.get("apples"));
+console.log(meyveler.has("pineapples"));
+console.log(meyveler.size);
+// objects map arasındaki farklar:
+
+// object de size propertysi yoktur , maps de size property si vardır.
+// object de key mutlaka string olmalı , maps de key herhangi bir data type da olabilir
+// object de key ler sıralı değil , maps de sıralı
+
+//----------------------------------------------------------------------------------------------
+
+console.log(typeof new Array(1, 2, 3)); // array lerin tipi objectdir
+console.log(typeof null); // null un tipi object dir.
+console.log(typeof undefined);
+console.log(
+  typeof function myFunc() {
+    return 5 + 2;
+  }
+); // function un tipi function dır.
+
+const book = undefined;
+console.log(book, typeof book); // hem value undefined hem type of value undefined.
+
+console.log(
+  typeof undefined,
+  typeof null,
+  null == undefined,
+  null === undefined
+); //undefined object true false
+
+// instanceof operator:
+
+const books = ["A", "B", "C"];
+console.log(books instanceof Array); // true
+console.log(books instanceof Object); // true
+console.log(books instanceof String); // false
+
+// ---------------------------------------------------------
+//  javascript void
+
+//   anchor tagleri arasındaki hrefe bir şey return etmeyen fonksiyon yazmamızı sağlar
