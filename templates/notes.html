@@ -6,10 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      .container{
+        background-color:red;   
+        opacity: 0.3;
+        /* If you do not want to apply opacity to child elements, like in our example above, use RGBA color values. The following example sets the opacity for the background color and not the text:
+        */
+      }
       button.font-button {
         width: 9em;
         height: 3em;
       }
+      .center{
+        text-align: center;
+      }
+      .large{
+        font-size: large;
+      }
+      
     </style>
     <script>
       console.log(document.getElementsByClassName("font-button").style);
@@ -25,13 +38,26 @@
 
       
         
-        
-       
-        
+        // background-repeat :
 
+        //no-repeat , repeat-x , repeat-y , repeat
        
-   
-    </script>
+        //css borders.
+
+        // margin: auto dersek , yatay olarak parent elementinin ortasına koyar
+
+
+        //box-sizing:
+        //padding ve border a verdiğimiz değerler div in height ve width ine eklenir
+        // bunu engellemek için div'in style ına box-sizing: border-box deriz. padding ve borderı
+        //önceden tanımladığımız height ve widthin içinden alır
+        // bu yüzden *{} bu şekilde tüm elementlere box-sizing:border-box uygulamak daha mantıklı.
+
+
+        // min-height , max-height , min-width , max-width
+        // örneğin min-width = 800px yaptık , pencereyi daraltırsak 800pxe kadar küçültür divi ;
+        // ama 800 e geldikten sonra divin boyutunu düşüremez ; aşağıda scroll çıkar yana kaydırarak görebiliriz.
+  </script>
   </head>
   <body>
     <div class="container">
@@ -42,6 +68,7 @@
       <button class="font-button" onclick="decreaseFont()">
         Click to decrease font size.
       </button>
+      <p class="center large">This paragraph refers to two classes.</p>
     </div>
   </body>
 </html>
