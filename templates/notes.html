@@ -5,12 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- birden çok css dosyası varsa , main css dosyasına diğer css dosyaları @import
+    ile import edilir @import "style2.css" şeklinde veya @import url("style2.css") şeklinde
+    daha sonra sadece main.css i html e linklememiz yeterlidir. 
+    -->
     <style>
       .container{
         background-color:red;   
         opacity: 0.3;
         /* If you do not want to apply opacity to child elements, like in our example above, use RGBA color values. The following example sets the opacity for the background color and not the text:
         */
+      }
+      .container * {
+        /*class ı  container olanın içerisindeki tüm elementleri seç ve style ı hepsine uygula demek
+        */
+        background-color: aqua;
       }
       button.font-button {
         width: 9em;
