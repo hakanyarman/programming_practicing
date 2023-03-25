@@ -739,4 +739,29 @@ function func(){
 }
 console.log(x); //ReferenceError: x is not defined
 
-// w3 hoisting de kaldım
+//------------------Hoisting--------------------------------------
+
+// hatalardan kaçınmak için variable ları her kod bloğunun başında tanımla. global ise en üstte.
+
+/* function myFunc(){
+
+} 
+şeklinde tanımlanan fonksiyonlar otomatik olarak en üste taşınır
+bu yüzden tanımlamanın üstünde çağırsak da hata vermeden çalışır.
+
+ama arrow funtion lar
+const myFunc = (a,b) => a+b ;
+bunlar otomatik olarak yukarı taşınmaz 
+ve eğer bunun üstünde çağırırsak otomatik olarak yukarı taşınmayacağı için reference error verir
+
+*/
+
+/*
+console.log(e);  let ve const un aksine hata vermek yerine undefined döndürür.
+var e = 5;
+*/
+
+/*
+console.log(e);  hata : ReferenceError: Cannot access 'e' before initialization
+let e = 5; 
+*/
