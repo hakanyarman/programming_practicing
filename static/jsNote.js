@@ -699,4 +699,44 @@ const pattern = /emre/i;
 console.log(pattern.test("Emre belezoğlu fenerbahçelidir")); //true
 // çünkü stringin içinde yazdığımız pattern yani emre bulunuyor.
 
-// w3 errors da kaldım.
+// --------------------ERRORS---------------------
+
+// try= tests a block of code for errors.
+// catch = handles the error.
+// throw = creates custom errors. (throw exception)
+// finally = execute code, after try and catch, regardless
+
+//user dan input aldığımızda bu yapıyı kullanmalıyız,çünkü user ın nasıl bir input gireceğini bilmiyoruz.
+
+//Try de test edeceğimiz kodu yazarız.eğer hata varsa 
+const prompt=require("prompt-sync")({sigint:true}); 
+try{
+  // let age = promp("how old are you?");
+  let age = prompt("how old are you?");
+  
+  if(age == "") throw "you didn't enter in anything!";
+  if(isNaN(age)) throw `${age} is not a number.`;
+  if(age < 18) throw "you need to be 18+";
+
+  console.log("you are " + age + " years old and you are now signed up"); 
+  //eğer throw larsa age e o değeri atamaz ve console da age yazdığımızda göremeyiz.
+  
+}
+catch(error){ // buradaki error objectdir. ve 2 propertie ye sahiptir. name ve message.
+  
+  console.log(error);
+}
+
+//------------------------------------------------------------------------
+// let ve const tanımlandığı kod bloğu dışarısından erişilemez ama var erişilebilir
+// function içinde tanımlanan değişkenler yine dışarıdan erişilemez.
+// global değişkenler her yerden erişilebilir
+
+// function variable ları function çalışıp tamamlandıktan sonra silinir
+
+function func(){
+  let x = "abcd"
+}
+console.log(x); //ReferenceError: x is not defined
+
+// w3 hoisting de kaldım

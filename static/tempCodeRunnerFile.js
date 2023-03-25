@@ -1,2 +1,8 @@
-const pattern = /emre/i;
-console.log(pattern.test("Emre belezoğlu fenerbahçelidir"));
+function func(){
+  let x = "abcd"
+}
+
+
+// ama function u çağırıp yazdırsaydık?
+func();
+console.log(x);
