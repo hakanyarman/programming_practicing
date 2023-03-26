@@ -765,3 +765,20 @@ var e = 5;
 console.log(e);  hata : ReferenceError: Cannot access 'e' before initialization
 let e = 5; 
 */
+
+// javascript default mode: sloppy mode . katı mod : strict mod
+// "use strict" ile kullanılır. kod un en başına veya fonksiyonların en başına yazılır.
+
+//------------------this keyword------------------------
+/*
+this keyword u object i refere eder
+object içindeki method da this , methodun bulunduğu objecti temsil eder
+
+function içinde global i temsil eder
+(strict modda ise undefined döner)
+
+bir event içinde this , eventi alan elemanı temsil eder
+örneğin <button onclick="this.style.color='red'"> click </button>
+
+this tek başına kullanıldığında global i temsil eder.
+*/
