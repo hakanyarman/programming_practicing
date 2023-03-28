@@ -827,3 +827,100 @@ console.log(welcome.bind(yigit)); //[Function: bound welcome]
  // call da direkt yazarız.
  var greetingToAda = greeting.apply(ada,["football","basketball"]);
 
+//-------------Arrow Function---------------------
+
+let fonk = () => 5+2;
+let fonk2 = (a,b) => {
+  return (a+b)
+} 
+// eğer tek satırda yazabiliyorsak return demeye gerek kalmaz.
+// tek satırda yazılmış hali:
+let fonk3 = (a,b) => a+b;
+
+// eğer tek parametre varsa parantez koymaya gerek kalmaz.
+
+let fonk4 = a => 2*a;
+console.log(fonk() , fonk2(2,3) , fonk3(2,3) , fonk4(5));
+
+// this keyword kullanımı regular function ve arrow function arasında farklıdır.
+// class ın içindeki metotları arrow function ile tanımla. this keywordu daha doğru çalışır.
+// arrow function da kullanılan this keywordu fonksiyonun içinde bulunduğu object i temsil eder
+
+class Employee {
+    constructor(name) {
+        this.name = name;
+    }
+    getEmployeeName() {
+        setTimeout(function () {
+            console.log(this.name);
+            // burada this, employee objectini refere etmiyor.
+         }, 1000)
+      }
+    getEmployeeNameArrow() {
+        setTimeout(() => {
+            console.log(this.name);
+            // burada this, employee objectini refere ediyor.
+        }, 2000)
+      }
+    }  
+let firstEmployee = new Employee('John');
+firstEmployee.getEmployeeName(); // undefined
+firstEmployee.getEmployeeNameArrow(); // John
+
+//----------------------------Classes---------------------------
+
+// class'ın içinde object oluşturmak için constructor methodunu kullan
+
+class Person{
+  constructor(name , birthYear){
+    this.name = name;
+    this.birthYear = birthYear;
+  }
+    age(){
+      let date = new Date().getFullYear();
+      return date-this.birthYear;
+    }
+}
+
+const mehmet = new Person("Mehmet",2002);
+let mehmetAge = mehmet.age();
+console.log(mehmetAge);
+
+//----------------Modules-----------------
+
+// javascript module leri import ile çağrılır.
+
+/* html e module bağlarken <script src="./index.js" type= "module"></script>  
+ type ına module yazmamız gereklidir. 
+
+ exports ikiye ayrılır :
+ 1) named exports
+ 2) default exports
+
+ named exportsları export edeceğimiz şeyin satır başında yazarak da kullanabiliriz
+ ör : export const name = "Hakan"; şeklinde
+ veya 
+ en aşağıda export {name,age} bu şekilde curly brackets ile de export edebiliriz. 
+
+
+ default export u bir dosyada sadece bir kez kullanabiliriz
+ ör: 
+ const age = 21;
+ const name = "Hakan";
+ export default age;
+*/
+
+
+/*
+import etme:
+
+named export ları curly brackets kullanarak import ederiz
+ör: 
+import {name,age} from "./person.js";
+
+default export ları import ederken curly bracket kullanılmaz
+import name from "./person.js";
+
+*** js dosyalarının başına ./ koymamız gerekli.
+
+*/
