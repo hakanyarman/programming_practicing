@@ -924,3 +924,43 @@ import name from "./person.js";
 *** js dosyalarının başına ./ koymamız gerekli.
 
 */
+
+
+//------------------------JSON-----------------------
+/*
+JSON verileri depolamak için kullanılır.
+sunucudan web sayfasına veri gönderiminde kullanılır.
+json dilden bağımsızdır.
+json herhangi bir dille yazılabilir
+syntax ı javascript objectleri ile aynıdır. bu yüzden javascript json'u
+native javascript objectine dönüştürebilir
+
+json syntax kuralları
+
+*veriler name/value çiftleridir.tıpkı javascript object de olduğu gibi
+*veriler virgül ile ayrılır.
+
+!!! json name leri tırnak işaretleri ile tutulmalıdır. ama javascript object nameleri gerek duymaz.
+
+json örneği:
+
+"employees":[
+  {"firstName":"John", "lastName":"Doe"},
+  {"firstName":"Anna", "lastName":"Smith"},
+  {"firstName":"Peter", "lastName":"Jones"}
+]
+
+json u javascriptte kullanmak istersek javascript bunu string olarak görür.
+jsonu native js objectine dönüştürmek için JSON.parse(jsonName) kullanılır
+
+
+let text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+const obj = JSON.parse(text);
+
+artık obj yi web sayfamızda kullanabiliriz.
+
+*/
