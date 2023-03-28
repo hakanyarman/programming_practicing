@@ -768,6 +768,7 @@ let e = 5;
 
 // javascript default mode: sloppy mode . katı mod : strict mod
 // "use strict" ile kullanılır. kod un en başına veya fonksiyonların en başına yazılır.
+// strict mode da undeclared variable kullanamazsın. var, let veya const ile tanımlamalısın. 
 
 //------------------this keyword------------------------
 /*
@@ -964,3 +965,58 @@ const obj = JSON.parse(text);
 artık obj yi web sayfamızda kullanabiliriz.
 
 */
+
+//--------------break points---------------------
+
+/*
+her breakpoint de kod yürütmesi durdurulur.
+*/
+
+// constant lar büyük harfle tanımlanır.
+// ör: const PI = 3.14;
+
+// dosya isimlerinde her zaman lower case kullan. web server larının çoğu case sensitive dir.
+
+
+//javascript best practises
+
+/* 
+- global variables kullanma
+- new keyword ünü kullanma
+- == kullanma
+- eval() kullanma
+
+----------------------------
+
+* tüm tanımlamaları kod bloğunun(fonksiyon ve script) en üstte yap.
+* object ve arrayleri const ile tanımla.
+
+* function da kullanılmayan parametreler undefined olur,
+bu yüzden function u tanımlarken parametrelere default değer verilmeli.
+ör: function myFunction(a=5, b=6) {
+      return a*b;
+    }
+*/
+
+
+// json da name kesinlikle string olmalı ama value string olmayabilir.
+
+console.log('Hakan' - 'Yarman'); //NaN
+
+// for döngüsünün çalışma hızını artırmak için . tanımlamaları döngünün dışında yap
+
+for(let i = 0; i<arr.length; i++) {
+  // bu şekilde kullanma, arr.length i dışarıda tanımla
+  // burada döngü her döndüğünde arr in lengthine baştan erişmeye süre harcar.
+}
+// doğru kullanım:
+let len = arr.length;
+for(let i = 0; i<len; i++) {
+
+}
+
+// script dosyasını head kısmına koymak sayfanın açılmasını geciktirebilir.
+// sayfa yüklendikten sonra javascript dosyasının çalıştırılmasını istersek
+// defer="true" kullanılır 
+// defer : ertelemek
+// <script src = "myscript.js" defer="true">  
