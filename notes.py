@@ -211,3 +211,86 @@ print (index)
 print('n' in word) 
 #print true because word variable contains n letter.
 print('nana' in word) 
+
+
+# list operations
+
+a = [1,2,3]
+b = [4,5,6]
+c = a + b 
+print(c) # [1, 2, 3, 4, 5, 6]
+
+print(a * 3) # [1, 2, 3, 1, 2, 3, 1, 2, 3]
+# a listesini 3 tekrarlı yazdırır.
+
+t = ['a', 'b', 'c', 'd', 'e', 'f']
+t[1:3] = ['x', 'y']
+print (t) #['a', 'x', 'y', 'd', 'e', 'f']
+
+t.append('h') #sonuna ekledi
+print(t)
+
+# list methodları void dir. yani bir şey döndürmez. 
+# w = t.sort() bu şekilde kullanılamaz.
+w = t
+w.extend([1,2])
+#w.sort() #TypeError: '<' not supported between instances of 'int' and 'str'
+print(w) #['a', 'x', 'y', 'd', 'e', 'f', 'h', 1, 2]
+
+silinen_eleman = w.pop(2) # indexi 2 olan item ı list den sildi
+# pop() a parameter vermezsek son item ı siler.
+print(w)
+print(silinen_eleman) # y
+
+# silinen elemanın en olduğuna ihtiyacımız yoksa del de kullanabiliriz.
+
+# t.del(t[1])  syntax error.
+# doğru kullanım:
+del t[4]
+print(t)
+
+t.remove('d') # değerini bildiğimiz elemanı silmek istediğimizde remove kullanırız.
+print(t)
+
+#stringi, her harfini içeren list haline dönüştürme: list methodu ile (built-in method) yapılır.
+
+str = "istanbul üniversitesi"
+letters = list(str)
+print (letters) #boşluğu da eleman olarak alır
+#['i', 's', 't', 'a', 'n', 'b', 'u', 'l', ' ', 'ü', 'n', 'i', 'v', 'e', 'r', 's', 'i', 't', 'e', 's', 'i']
+
+words = str.split(" ") #boşluk gördüğünde elemanları ayır demek.
+#eğer arada örneğin  -- olsaydı splitin parametresine -- yazardık.
+print(words)
+
+# join methodu splitin tam tersidir. split stringin elemanlarını ayırır, listeye dönüştürür;
+# join bir list in elemanlarını birleştirip stringe çevirir.
+
+words2 = ["türkiye","hırvatistan","hollanda","almanya"]
+concatenatedWords = "-".join(words2) #araya - ekleyerek list elemanlarını birleştirdi ve stringe dönüştürdü.
+print(concatenatedWords)
+
+str1 = "abc"
+str2 = "abc"
+print(str1 is str2) #true burada aynı objecti refere ederler. "abc" şeklinde tek object var.
+
+list1 = ["a","b","c"]
+list2 = ["a","b","c"]
+list3 = list2 
+
+
+print(list1 is list2) #false, burada birbirine eşdeğer farklı 2 objecti refere ederler
+#list ler eşdeğer(equivalent) olsa da birebir aynı(identical) değillerdir.
+
+print(list2 is list3) #true. burada aynı objecti temsil eden 2 referans var, tek object var.
+
+# eğer list2 yi değiştirirsek otomatik olarak list3 de değişir. çünkü list3 farklı bir object tutmuyor,
+# list2 nin sahip olduğu objecti refere ediyor
+
+list2[0] = "f"
+print(list3) #['f', 'b', 'c']
+
+#list methodlarının çoğu string methodlarının tam aksine yeni bir değer oluşturmaz.
+#string methodlarında yeni string oluşturulur ve orijinaline dokunulmaz.
+
+#original listin değişmesini önlemek için o listin bir kopyasını oluştur ve işleme kopyadan devam et.
