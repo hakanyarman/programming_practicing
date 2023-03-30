@@ -55,3 +55,6 @@ retrieve : geri almak
 iteration : yineleme , tekrarlanma
 lather : köpürtmek, köpük
 tempting : cazip
+
+
+
