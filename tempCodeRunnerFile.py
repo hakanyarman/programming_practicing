@@ -1,17 +1,41 @@
-str1 = "abc"
-str2 = "abc"
-print(str1 is str2) #true burada aynı objecti refere ederler. "abc" şeklinde tek object var.
+# key value çiftleridir.
+obj =  dict();
+print (obj) #{} boş dict oluşturdu
 
-list1 = ["a","b","c"]
-list2 = ["a","b","c"]
-list3 = list2
-print(list1 is list2) #false, burada birbirine eşdeğer farklı 2 objecti refere ederler
-#list ler eşdeğer(equivalent) olsa da birebir aynı(identical) değillerdir.
+obj2 = {"bir" : 1, "iki": 2, "üç": 3}
+print (obj2) #{'bir': 1, 'iki': 2, 'üç': 3}
 
-print(list2 is list3) #true. burada aynı objecti temsil eden 2 referans var, tek object var.
+obj2["iki"] = "two" # dictionary de önceden bulunan key'in value sunu değiştirebiliriz.
+print (obj2) #{'bir': 1, 'iki': 'two', 'üç': 3}
 
-# eğer list2 yi değiştirirsek otomatik olarak list3 de değişir. çünkü list3 farklı bir object tutmuyor,
-# list2 nin sahip olduğu objecti refere ediyor
+# yeni key-value çifti ekleyebiliriz.
+obj2["dört"] = 4 
+print(obj2) #{'bir': 1, 'iki': 'two', 'üç': 3, 'dört': 4}
 
-list2[0] = "f"
-print(list3)
+# dictionary lerde value ya erişmek için listlerde olduğu gibi index kullanılamaz.
+# key ile erişiriz value'ya.
+# dict de itemlerin sırası(order) karışabilir. ama bu probleme yol açmaz çünkü key ile erişiriz value'ya.
+
+#print(obj2["beş"]) #KeyError: 'beş' böyle bir key yok.
+
+length_of_dict = len(obj2) 
+print(length_of_dict) #4
+
+arr = []
+for key in obj2:
+    arr.append(obj2[key])
+
+
+print(arr) #[1, 'two', 3, 4]
+
+has_dict_3 =  3 in obj2
+print (has_dict_3) #false
+
+has_dict_üç = "üç" in obj2
+print(has_dict_üç) #true
+
+# dict deki herhangi bir key in varolup olmadığını kontrol etmek için in kullanılır.
+# ama value'yu kontrol etmez, key i kontrol eder.
+
+items = obj2.values()
+print(items) 
