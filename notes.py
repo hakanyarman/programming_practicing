@@ -335,5 +335,7 @@ print(has_dict_üç) #true
 # dict deki herhangi bir key in varolup olmadığını kontrol etmek için in kullanılır.
 # ama value'yu kontrol etmez, key i kontrol eder.
 
+# value ların var olup olmadığını kontrol etmek için dict.values() ile value lar bir değişkene atanır
+# sonra herhangi bir değerin var olup olmadığı kontrol edilebilir. 
 items = obj2.values()
 print(items) #dict_values([1, 'two', 3, 4])

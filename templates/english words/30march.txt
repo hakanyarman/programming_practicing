@@ -4,7 +4,3 @@ consist: kapsamak, içermek
 court: mahkeme
 fur: kürk
 traverse: zigzak, çapraz.
-append: eklemek.
-augment: arttırmak, çoğaltmak
-comprehension: anlama, kavrama
-identical: birebir aynı

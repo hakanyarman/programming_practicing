@@ -1,0 +1,5 @@
+append: eklemek.
+augment: arttırmak, çoğaltmak
+comprehension: anlama, kavrama
+identical: birebir aynı
+correspond: karşılık gelmek

@@ -1020,3 +1020,45 @@ for(let i = 0; i<len; i++) {
 // defer="true" kullanılır 
 // defer : ertelemek
 // <script src = "myscript.js" defer="true">  
+
+
+//--------------Objects----------------------
+
+/*
+primitives : methodu ve propertie'si olmayan değerler.
+primitive değerler dışında her şey objectdir.
+*/
+
+//objects are mutable. primitive values are not mutable(immutable)
+
+const human = {name:"Hakan",surname:"Yarman",age:21};
+const man = human;
+man.name = "Ahmet";
+// burada human objectinin kopyası olan man i değiştirdiğimizde human da değişir.
+// çünkü man = human dediğimizde yeni object oluşturulmadı, var olan object e bir tane daha referans eklendi.
+console.log(human); // { name: 'Ahmet', surname: 'Yarman', age: 21 }
+
+delete human.age ;
+// object propertie sini silmek için delete kullanılır. ama kullanılmamalı.
+console.log(human);
+
+//propertie ler arasında döngü dönmek için for in kullanılır.
+txt = "";
+for(prop in human){
+  txt += human[prop] + " ";
+}
+console.log(txt);
+
+// normal for'u (indexli for'u ) for in şeklinde kullanmak:
+
+for(let i in human){
+  console.log(human[i]);
+}
+
+// propertie'lerin değeri olan value lar bir propery attribute'u dur
+// diğer attribute'lar : enumerable, configurable, and writable. bu attribute'lar,
+// propertie nin nasıl erişilceiğini belirler. okunabilir mi yazılabilir mi vs.
+// değiştirilebilen tek propertie attribute'u value'dur.
+// tüm property attribute'lar okunabilirdir.
+
+// property attribute ları ile ilgili video izle.
