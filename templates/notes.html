@@ -31,8 +31,28 @@
       .large{
         font-size: large;
       }
+      .attr-button{
+        color:  black;
+        background-color: white;
+      }
       
     </style>
+  
+  </head>
+  <body>
+    <div class="container">
+      <p id="font" class="abc" abc="123" data-prop="some value" >Change my font size</p>
+      <button class="font-button" onclick="increaseFont()">
+        Click to increase font size.
+      </button>
+      <button class="font-button" onclick="decreaseFont()">
+        Click to decrease font size.
+      </button>
+      <br>
+      <button class="attr-button" onclick="changeAttr()">click to change id attribute.</button>
+      <p class="center large">This paragraph refers to two classes.</p>
+    </div>
+
     <script>
       console.log(document.getElementsByClassName("font-button").style);
       function increaseFont() {
@@ -66,18 +86,16 @@
         // min-height , max-height , min-width , max-width
         // örneğin min-width = 800px yaptık , pencereyi daraltırsak 800pxe kadar küçültür divi ;
         // ama 800 e geldikten sonra divin boyutunu düşüremez ; aşağıda scroll çıkar yana kaydırarak görebiliriz.
+        //--------------------------------------------------------------------------------------------------------
+
+
+        let paragraphElement = document.querySelector(".abc");
+        console.log(paragraphElement.id);
+
+        function changeAttr(){
+        paragraphElement.id = "hakan";
+        document.getElementById("hakan").innerHTML = "<h1> id attribute u değiştirildi  </h1>";
+      }
   </script>
-  </head>
-  <body>
-    <div class="container">
-      <p id="font">Change my font size</p>
-      <button class="font-button" onclick="increaseFont()">
-        Click to increase font size.
-      </button>
-      <button class="font-button" onclick="decreaseFont()">
-        Click to decrease font size.
-      </button>
-      <p class="center large">This paragraph refers to two classes.</p>
-    </div>
   </body>
 </html>
