@@ -22,3 +22,32 @@ console.log(txt);
 for(let i in human){
   console.log(human[i]);
 }
+
+// propertie'lerin değeri olan value lar bir propery attribute'u dur
+// diğer attribute'lar : enumerable, configurable, and writable. bu attribute'lar,
+// propertie nin nasıl erişilceiğini belirler. okunabilir mi yazılabilir mi vs.
+// değiştirilebilen tek propertie attribute'u value'dur.
+// tüm property attribute'lar okunabilirdir.
+
+
+// object'e sonradan method ekleme:
+
+human.sayWelcome = function(guest){
+  return "Welcome " + guest.name + " " + guest.surname + " my name is " + this.name ;
+}
+
+const human2 = {
+  name: "Ali",
+  surname: "Yılmaz",
+  age:30,
+  sayAge : function(){
+    return `my age is ${this.age}`;
+  }
+}
+
+console.log(human.sayWelcome);
+console.log(human2.sayAge);
+console.log(human.sayWelcome(human2));
+
+console.log(human); 
+console.log(human2);

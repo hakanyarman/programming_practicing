@@ -1061,4 +1061,26 @@ for(let i in human){
 // değiştirilebilen tek propertie attribute'u value'dur.
 // tüm property attribute'lar okunabilirdir.
 
-// property attribute ları ile ilgili video izle.
+
+// object'e sonradan method ekleme:
+
+human.sayWelcome = function(guest){
+  return "Welcome " + guest.name + " " + guest.surname + " my name is " + this.name ;
+}
+
+const human2 = {
+  name: "Ali",
+  surname: "Yılmaz",
+  age:30,
+  sayAge : function(){
+    return `my age is ${this.age}`;
+  }
+}
+
+console.log(human.sayWelcome);
+console.log(human2.sayAge);
+console.log(human.sayWelcome(human2));
+
+console.log(human); // methodu sonradan eklediğimiz için bu şekilde anonymous gösterdi:  [Function (anonymous)]
+console.log(human2); // method zaten object oluşturulurken vardı, sonradan eklenmedi : [Function: sayAge]
+
