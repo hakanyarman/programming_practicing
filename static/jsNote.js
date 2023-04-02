@@ -1053,7 +1053,7 @@ console.log(txt);
 
 for(let i in human){
   console.log(human[i]);
-}
+} // human.i kullanılamaz, human[i] kullanılmalı. burada i propertie'dir.
 
 // propertie'lerin değeri olan value lar bir propery attribute'u dur
 // diğer attribute'lar : enumerable, configurable, and writable. bu attribute'lar,
@@ -1084,3 +1084,121 @@ console.log(human.sayWelcome(human2));
 console.log(human); // methodu sonradan eklediğimiz için bu şekilde anonymous gösterdi:  [Function (anonymous)]
 console.log(human2); // method zaten object oluşturulurken vardı, sonradan eklenmedi : [Function: sayAge]
 
+// objecti yeni bir array'e dönüştürmek:
+
+const humanArray = Object.values(human);
+console.log(humanArray); //[ 'Ahmet', 'Yarman', [Function (anonymous)] ]
+
+// stringify
+// objecti string'e dönüştürme:
+
+let stringHuman = JSON.stringify(human);
+console.log(stringHuman); //{"name":"Ahmet","surname":"Yarman"} burada json notation da verir. key leri de
+// string (tırnak işaretli) şekilde verir.
+console.log(stringHuman[0]); // {} lar dahil string'e dönüştürür. o yüzden stringHuman[0] = { olur.
+
+console.log(JSON.stringify(human2)); //{"name":"Ali","surname":"Yılmaz","age":30} normalde human2 de
+// method da bulunuyordu ama stringify object methodlarını stringe çeviremez. o yüzden yazdırmadı.
+// bunu düzeltmek için methodu öncesinde stringe çevirebiliriz.
+
+human2.sayAge = human2.sayAge.toString();
+console.log(JSON.stringify(human2)); //{"name":"Ali","surname":"Yılmaz","age":30,"sayAge":"function(){\r\n    return `my age is ${this.age}`;\r\n  }"}
+
+//arrayleri stringe dönüştürmek için de stringify kullanılır.
+const movies = ["John Wick", "Kurtlar Vadisi", "Leyla ile Mecnun"];
+console.log(JSON.stringify(movies)[0]); // [
+
+
+// getters and setters
+
+const woman = {
+  name: "Dilek",
+  surname: "Yilmaz",
+  nationality: "",
+  get fullName() {
+    return this.name + " " + this.surname;
+  },
+  set nation(nation) {
+    this.nationality = nation.toUpperCase();
+  }
+};  
+
+console.log(woman.fullName); //Dilek Yilmaz
+// bunu method olarak da yapabilirdik fullname : function(){ } gibi ama get ile yaptığımızda fullname property
+//oluyor ve erişmek için parantez koymuyoruz bu yüzden.
+
+woman.nation = "Türk";
+console.log(woman.nationality);
+
+//------------------Constructors----------------
+// object constructor function tanımlarken ilk harfi büyük yap. ayırt edilmesi için.
+
+
+class Person{
+  constructor(first,last,birthYear,height,weight) {
+    this.firstName = first;
+    this.lastName = last;
+    this.birthYear = birthYear;
+    this.height = height;
+    this.weight = weight;
+    this.age = new Date().getFullYear() - this.birthYear;
+    this.fullName = this.firstName + " " + this.lastName
+  };
+  calcBMI(){
+    return this.weight / (this.height)**2 ;
+  }
+}
+const hakan = new Person("Hakan","Yarman",2002,1.98,85);
+console.log(hakan.fullName, hakan.calcBMI(), hakan.age);
+hakan.nationality = " Türk";
+console.log(hakan);
+//object'e method ekleme
+hakan.run = function(){
+  console.log("I am running");
+}
+
+console.log(hakan.run());
+
+//constructor'a method eklenemez, objectlere sonradan eklenebilir.
+
+//------------------- object prototypes ---------------------- 
+/*
+tüm javascript objectleri propertie lerini ve methodlarını bir prototype'den alır.
+*/
+
+function Man(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+  this.nationality = "English";
+}
+
+//prototype inheritance zincirinin en üstünde Object.prototype yer alır
+// ve diğer objectler ör: Man objecti , Date objecti , Array objecti prototype larını burdan alır.
+
+// burada Man functionuna Man.height = diye propertie ekleyemeyiz. ancak Man functionundan oluşan objectlere
+// ayrı ayrı propertie ekliyebiliriz. 
+// eğer Man constructor funct'dan oluşan tüm objectlere aynı propertie'yi veya method'u eklemek istersek 
+// veya constructor'un kendisine eklemek istersek 
+// prototype kullanırız.
+
+console.log(Man.prototype); //{}
+
+Man.prototype.homeland = "Hatay";
+
+console.log(Man.prototype); //{ homeland: 'Hatay' }
+
+const Abdullah = new Man("Abdullah","Aktaş",21,"brown");
+
+console.log(`Abdullah is from ${Abdullah.homeland}`);
+
+// prototype ile constructor function'a method da ekleyebiliriz.
+
+Man.prototype.sayOtherMansName = function(otherMan){
+  return otherMan.firstName + " " + otherMan.lastName;
+}
+
+const Eren = new Man("Eren","Hedbe",21,"green");
+
+console.log(Abdullah.sayOtherMansName(Eren));
