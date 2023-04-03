@@ -1202,3 +1202,39 @@ Man.prototype.sayOtherMansName = function(otherMan){
 const Eren = new Man("Eren","Hedbe",21,"green");
 
 console.log(Abdullah.sayOtherMansName(Eren));
+
+//--------------iterables-----------------------
+
+//iterables for strings
+const str = "Beypazarı Maden Suyu";
+for(let x of str)
+  console.log(x,str.indexOf(x)); 
+/*B 0
+  e 1
+  y 2
+  p 3
+  a 4
+  z 5
+  a 4
+  r 7
+  ı 8
+    9
+  M 10
+  a 4
+  d 12
+  e 1
+  n 14
+    9
+  S 16
+  u 17
+  y 2
+  u 17
+*/
+
+//iterables for array:
+const players = ["Arda Güler", "Ferdi Kadıoğlu", "Enner Valencia", "Mert Hakan Yandaş"];
+let text = "";
+for(const x of players)
+    text += x + " is fenerbahçe's football player ";
+console.log(text);  
+
