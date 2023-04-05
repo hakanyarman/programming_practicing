@@ -1238,3 +1238,46 @@ for(const x of players)
     text += x + " is fenerbahçe's football player ";
 console.log(text);  
 
+//homamade iterable ları atladım.sets maps object reference atladım.
+
+//----------------------FUNCTIONS------------------------
+
+//function declaration : 
+console.log(sum(2,8)); // hoisting den dolayı function tanımlanmadan önce de function'u çağırabiliriz.
+// function tanımı otomatik olarak ilk satıra taşınır
+
+function sum(x,y){
+  return x+y;
+}
+
+//function expression : 
+console.log(divide(5,8)); //Cannot access 'divide' before initialization
+
+//function expression'da function tanımdan önce kullanılamaz.function expressions hoisted değildir
+
+const divide = function(x,y){
+  return x/y;
+}
+// divide functionu anonymous dur. fonksiyonun ismi yoktur, variable ismi ile çağrılır.
+
+// Arrow function:
+// console.log(greet()); //arrow functionlar hoisted değildir. tanımlandığı yerin üstünde çağırılamaz.
+const greet = () => "merhaba";
+
+// arrow function la object tanımlayamayız. yani constructor function değillerdir çünkü this keywordu kullanılamaz.
+
+// functionlar da aslında object'dir.property ve methodlaara sahiptirler.
+
+function myFunction3(x,y,z,t,q,r){
+  return `${arguments.length>5 ? "number of arguments greater than 5 ":"number of arguments not greater than 5"}..`;
+}
+
+console.log(myFunction3());
+
+console.log(myFunction3.toString()); // function'lar stringe de dönüştürülebilir.
+
+// parameters arguments farkı:
+// parameters function tanımlandığında gerçek değer olmayan değişkenlerdir.
+// arguments functionu çağırdığımızda girdiğimiz gerçek değerlerdir.
+
+
