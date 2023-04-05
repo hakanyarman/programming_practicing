@@ -300,11 +300,22 @@ print(list3) #['f', 'b', 'c']
 obj =  dict();
 print (obj) #{} boş dict oluşturdu
 
-obj2 = {"bir" : 1, "iki": 2, "üç": 3}
-print (obj2) #{'bir': 1, 'iki': 2, 'üç': 3}
+obj2 = {"bir" : 1, "iki": 2, "üç": 3} #{'bir': 1, 'iki': 2, 'üç': 3}
+#print(dir(obj2))
+#print(help(obj2))
+print (obj2.get("bir")) 
+print(obj2.keys()) #dict_keys(['bir', 'iki', 'üç']) => sadece key leri yazdırdı.
+
+for key in obj2.keys():
+    print(key,obj2[key])
+#bir 1
+#iki 2
+#üç 3
+
 
 obj2["iki"] = "two" # dictionary de önceden bulunan key'in value sunu değiştirebiliriz.
 print (obj2) #{'bir': 1, 'iki': 'two', 'üç': 3}
+
 
 # yeni key-value çifti ekleyebiliriz.
 obj2["dört"] = 4 
@@ -339,3 +350,27 @@ print(has_dict_üç) #true
 # sonra herhangi bir değerin var olup olmadığı kontrol edilebilir. 
 items = obj2.values()
 print(items) #dict_values([1, 'two', 3, 4])
+
+###################### tuples ##############################
+#tuples sonradan değiştirilemez.
+my_tuple = ('a','r','d','a')
+print(my_tuple)
+print(my_tuple[2])
+# my_tuple[2] = 'e' => tuple elemanı değiştirilemez.
+my_tuple = ('A',) + my_tuple[1:] #('A', 'r', 'd', 'a') bu şekilde değiştirilebilir.
+print(my_tuple)
+print(type(my_tuple)) #<class 'tuple'>
+
+one_element_tuple = ('a')
+print(type(one_element_tuple)) #<class 'str'> #yanlış sonuç verir
+print(type(('a',))) #<class 'tuple'> => yine tek eleman var ama virgül olduğu için tuple türünde oluyor.
+#eğer tek elemanlı tuple tanımlıyorsak sonuna virgül koymalıyız.
+
+my_tuple_2 = tuple('arda güler')
+print(my_tuple_2) #('a', 'r', 'd', 'a', ' ', 'g', 'ü', 'l', 'e', 'r') otomatik olarak ayırır.
+print(len(my_tuple_2))
+
+
+name,surname ,age = ('Hakan','Yarman',21)
+print(name,surname,age)
+print(surname)
