@@ -1,0 +1,44 @@
+emit: yaymak
+grind: öğütmek
+integrate:birleştirmek
+hatred : nefret
+hut, lodge : kulube, barınak
+inferior : kalitesiz, aşağı derecede
+overlook: görmezden gelmek, gözden kaçırmak
+shepherd: çoban
+venture: girişim,risk, tehlikeye atmak
+alley: dar sokak
+ax: balta
+bunch:demet
+decent:edepli, iyi, düzgün
+disgraceful:utanç verici
+elbow : dirsek
+loose: gevşetmek
+persist:üstelemek,ısrar etmek,sebat etmek,sürdürmek
+pine : çam
+acre: dönüm
+chamber: oda,salon
+sole: yegane,tek
+arise : meydana çıkmak, oluşmak
+benefactor: hayırsever
+blacksmith: demirci
+chimney: baca
+compensate: tazmin etmek, bedelini ödemek
+forge:demir dövmek
+humble : mütevazı
+modest : mütevazı
+occupy : işgal etmek, oturmak,meşgul etmek.
+preach: vaaz vermek
+prosper: işleri rast gitmek, başarılı olmak.
+province: eyalet.
+acquire : elde etmek
+deceive : kandırmak
+offense: suç
+chore: ev işleri
+disguise: tebdili kıyafet, tanınmamak için giyilen elbise
+curse : lanet, beddua
+cemetery : mezarlık
+acquaint: tanıtmak,bilgi vermek
+tease : alay etmek
+sled : kızak
+
