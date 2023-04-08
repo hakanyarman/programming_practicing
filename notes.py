@@ -374,3 +374,4 @@ print(len(my_tuple_2))
 name,surname ,age = ('Hakan','Yarman',21)
 print(name,surname,age)
 print(surname)
+

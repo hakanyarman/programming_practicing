@@ -34,3 +34,13 @@ def which_is_new(car1,car2):
 
 print(which_is_new(my_car,your_car)) #Audi is older than Ford
 
+
+car1 = Car("Togg",2022,"White")
+car2 = Car("Togg",2022,"White")
+
+print(car1==car2) # objectlerin içeriği aynı olsa da birbirlerine eşit değillerdir.
+print(car1 is car2) # == ile aynı şey.
+
+car3 = car1
+print(car3==car1) #True
+print(car3 is car1)
