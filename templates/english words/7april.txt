@@ -2,3 +2,4 @@ hostage: rehine
 insect: böcek
 bug : böcek
 principal : müdür, temel(fundamental)
+compromise : uzlaşmak, anlaşmak
