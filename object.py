@@ -44,3 +44,5 @@ print(car1 is car2) # == ile aynı şey.
 car3 = car1
 print(car3==car1) #True
 print(car3 is car1)
+
+# oop kodu dry (don't repeat yourself) tutmaya yarar.

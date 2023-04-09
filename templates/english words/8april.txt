@@ -1,0 +1,5 @@
+specify : belirtmek, açıkça belirtmek
+firework : havaifişek
+mow : biçmek
+lawn : çim 
+startle : irkiltmek,ürkütmek
