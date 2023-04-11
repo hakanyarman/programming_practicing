@@ -1,0 +1,5 @@
+fertile : verimli,bereketli(toprak)
+rough : kaba,pürüzlü,sert
+council : konsey,meclis
+trap : tuzak
+commit : işlemek, teslim etmek, vaadetmek, söz vermek.
