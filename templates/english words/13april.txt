@@ -1,0 +1,2 @@
+breadth: genişlik,en
+embrace: kucaklamak.
