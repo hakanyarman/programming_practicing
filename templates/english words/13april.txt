@@ -1,2 +1,9 @@
 breadth: genişlik,en
 embrace: kucaklamak.
+prominent: öne çıkan
+dimension : boyut
+derive : türetmek
+intersect : kesişmek
+explict : açık, belirgin
+shut : kapamak
+pour : dökmek
