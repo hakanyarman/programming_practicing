@@ -3,3 +3,6 @@ rough : kaba,pürüzlü,sert
 council : konsey,meclis
 trap : tuzak
 commit : işlemek, teslim etmek, vaadetmek, söz vermek.
+sink : batmak
+caterpillar : tırtıl
+bet : iddia, bahis.
