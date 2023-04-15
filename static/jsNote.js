@@ -184,8 +184,8 @@ document.writeln(html);
 
 // typeof(NaN) => number .? neden sor ?
 
-let x = 2 / 0;
-console.log(x); //Infinity
+let numberr = 2 / 0;
+console.log(numberr); //Infinity
 // Infinity is the largest possible number in javascript.
 // typeof(Infinity) => number
 
@@ -203,12 +203,12 @@ console.log(parseFloat("-18.56")); // -18.56
 
 // value swapping
 // 1)DESTRUCTURING ASSIGNMENT
-let a = 5;
-let b = 7;
+let o = 5;
+let u = 7;
 
-[a, b] = [b, a];
+[o, u] = [u, o];
 console.log(
-  `the value of a after swapping : ${a} and the value of b after swapping : ${b}`
+  `the value of o after swapping : ${o} and the value of u after swapping : ${u}`
 );
 
 //2)TEMPORARY VARIABLE
@@ -494,11 +494,11 @@ console.log(properties);
 
 const cars2 = ["BMW", "Volvo", "Mini"];
 
-let text2 = "";
+let text_ = "";
 for (let x of cars2) {
-  text2 += x + " ";
+  text_ += x + " ";
 }
-console.log(text2);
+console.log(text_);
 
 //string için
 
@@ -1322,3 +1322,50 @@ Person.prototype.nationality = "English";
 
 console.log(angela.nationality);
 
+// functions notes 
+
+// decleration keyword (const,let,var) kullanılmadan oluşturulan variable lar daima global olur.
+
+function access(){
+  degisken = 5;
+}
+access() // önce funtion u çağırıp çalıştırmalıyız ki değişken oluşturulsun
+console.log(degisken);
+
+function noaccess(){
+  var degisken2= 5;
+  let degisken3 = 5;
+}
+noaccess();
+console.log(degisken2,degisken3); //ikisine de erişilemez. sadece function içinden erişilebilirler.
+
+// local variable lar function çalıştırılıp bittikten sonra silinirler
+
+// nested functions: 
+// functionda üstteki scope daki verilere erişebiliriz. mesela global scope daki verilere erişebiliriz.
+// nested function ise içinde bulunduğu functionun verilerine erişebilir.
+
+// function add() {
+//   let counter = 0;
+//   function plus() {
+//    counter += 1;
+//   }
+//   plus();   
+//   return counter;
+// }
+
+// console.log(add());
+
+const add = (function () { // self invoking function.
+  let counter = 0;
+  return function () {counter += 1; return counter}
+})();
+
+add();
+add();
+add();
+console.log(add()); //4
+
+
+// class üzerinden yeni bir object oluşturulduğunda constructor function otomatik olarak çalışır.
+// constructor function tanımlamasak bile default olarak boş bir constructor tanımlanır.
