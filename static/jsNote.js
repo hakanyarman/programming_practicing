@@ -1281,3 +1281,44 @@ console.log(myFunction3.toString()); // function'lar stringe de dönüştürüle
 // arguments functionu çağırdığımızda girdiğimiz gerçek değerlerdir.
 
 
+//----------------- Class Practise ----------------
+class Person{
+  constructor(name,age,gender){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  };
+  propose(beloved){
+     console.log(`will you marry me ${beloved.name}`);
+  };
+  response(proposer){
+    let answer = "";
+    if(this.gender!==proposer.gender){
+      if(Math.abs(this.age - proposer.age)<=3){
+        answer = "Yess you meet all the conditions";
+      }else{
+        answer = "Sorry ,i don't want too much age difference between me and the person I'm going to marry";
+      }
+    }else{
+      answer = "No i want to marry opposite gender";
+    }
+     console.log(answer);
+  };
+}
+
+const bale = new Person("Bale",24,"Male");
+const anna = new Person("Anna",23,"Female");
+const angela = new Person("Angela",30,"Female");
+const john = new Person("John",26,"Male")
+
+bale.propose(anna);
+anna.response(bale);
+
+
+angela.propose(john);
+john.response(angela);
+
+Person.prototype.nationality = "English";
+
+console.log(bale.nationality);
+
