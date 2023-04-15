@@ -1320,5 +1320,5 @@ john.response(angela);
 
 Person.prototype.nationality = "English";
 
-console.log(bale.nationality);
+console.log(angela.nationality);
 
