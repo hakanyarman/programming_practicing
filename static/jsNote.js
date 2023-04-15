@@ -1369,3 +1369,22 @@ console.log(add()); //4
 
 // class üzerinden yeni bir object oluşturulduğunda constructor function otomatik olarak çalışır.
 // constructor function tanımlamasak bile default olarak boş bir constructor tanımlanır.
+
+// class static methods:
+
+// classlardan tanımlanan objectlerden static methodları çağıramayız. Class üzerinden çağırabiliriz.
+// ör:
+
+
+class Driver {
+  constructor(name,carModel) {
+    this.name = name;
+    this.car = carModel;
+  };
+  static drive(driverObj) {
+    return "I am driving " + driverObj.car;
+  }
+}
+const yusuf= new Driver("Yusuf","Audi");
+//console.log(yusuf.drive()); //object den static methoda erişilemez. 
+console.log(Driver.drive(yusuf));
