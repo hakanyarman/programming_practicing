@@ -1384,7 +1384,35 @@ class Driver {
   static drive(driverObj) {
     return "I am driving " + driverObj.car;
   }
+  drive2(){
+    return "I am " + this.name + " and i am driving " + this.car;
+  }
 }
 const yusuf= new Driver("Yusuf","Audi");
 //console.log(yusuf.drive()); //object den static methoda erişilemez. 
 console.log(Driver.drive(yusuf));
+
+// Class inheritance
+
+// bir classın parent classdan miras alması için inherited class oluşturulurken extend keyword ü kullanılır.
+
+class TaxiDriver extends Driver{
+  constructor(name,carModel,salary){
+    super(name,carModel); // super methodunu inherited constructor içinde tanımlarız ve super() ile 
+    // constructorına ve properties ve methodlarına sahip oluruz.
+    
+    this.salary = salary;
+  }
+  sayJobAndSalary(){
+    return this.drive2() + " for " + this.salary + " liras."; //burada drive2 methodunu miras aldığı için //kullanabildik
+  }
+  changeCar(newCar){
+    this.car = newCar;
+  }
+}
+
+const richard = new TaxiDriver("Richard Higgs", "Mercedes",12000);
+console.log(richard.sayJobAndSalary());
+console.log(richard.car);
+richard.changeCar("Cadillac");
+console.log(richard.car);
