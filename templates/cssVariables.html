@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* :root global scope içinde başına -- getirerek css de variable tanımlayabilir ve 
+        tanımladığımız değişkenleri sonradan var(--variablename) şeklinde kullanabiliriz.
+        */
+        :root {
+            --blue : #0285A6;
+            --kirmizi : #ff0000;
+            --yesil : #008000;
+        }
+        h1{
+            color: var(--blue);
+            border-bottom: 2px solid var(--yesil);
+        }
+        h1.redHeader{
+            color: var(--kirmizi)
+        }
+    </style>
+</head>
+<body>
+    <h1>Blue text</h1>
+    <h1 class="redHeader">Red text</h1>
+</body>
+</html>
