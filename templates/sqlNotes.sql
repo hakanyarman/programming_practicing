@@ -50,5 +50,13 @@ INSERT INTO yaparken id yi biz belirtmiyoruz, yeni row eklediğimizde id otomati
 
 Insert ederken tüm columnlara değer atamak zorunda değiliz. Değer vermediğimiz Columnlar null olur.
 
+----------------------------------
+null recordları getirmek için IS NULL kullanılır.
+ör:
+SELECT Address FROM Customers WHERE Address IS NULL; --> null olan recordları getirir.
+
+SELECT ProductName,CustomerID FROM Customers WHERE ProductName IS NOT NULL --> 
+product name i null olmayan recordları getirir 
+
 
  */
