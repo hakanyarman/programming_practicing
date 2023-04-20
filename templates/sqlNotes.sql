@@ -59,4 +59,42 @@ SELECT ProductName,CustomerID FROM Customers WHERE ProductName IS NOT NULL -->
 product name i null olmayan recordları getirir 
 
 
+SELECT * FROM Customers WHERE CustomerID>10 LIMIT 8;
+--> customerid si 10 dan büyük olan ilk 8 recordu getirdi.
+
+
+SELECT MAX(CustomerID) AS germanyenbuyukid FROM Customers Where Country='Germany'
+--> country si germany olan en büyük id yi germanyenbüyükid ismiyle getirdi.
+
+
+
+* like operator where den sonra kullanılır.
+LIKE Operator	Description
+WHERE CustomerName LIKE 'a%'	Finds any values that start with "a"
+WHERE CustomerName LIKE '%a'	Finds any values that end with "a"
+WHERE CustomerName LIKE '%or%'	Finds any values that have "or" in any position
+WHERE CustomerName LIKE '_r%'	Finds any values that have "r" in the second position
+WHERE CustomerName LIKE 'a_%'	Finds any values that start with "a" and are at least 2 characters in length
+WHERE CustomerName LIKE 'a__%'	Finds any values that start with "a" and are at least 3 characters in length
+WHERE ContactName LIKE 'a%o'	Finds any values that start with "a" and ends with "o"
+
+--> % geriye kalan karakterleri temsil ediyor
+_ tek 1 karakteri temsil eder.
+
+SELECT * FROM Customers
+WHERE CustomerName NOT LIKE 'a%'; --> a ile başlamayanları getirir.
+
+------------------------------------------------------
+IN OPERATOR
+or kullanmanın kısa yoludur.
+
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK'); --> 'Germany' OR 'France' OR 'UK' yerine böyle de kullanabiliriz.
+
+-------------
+SELECT * FROM Products
+WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+ORDER BY ProductName;
+--> Alfabetik sıraya göre bu iki text arasında olanları getirir.
+
  */
