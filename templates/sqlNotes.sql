@@ -97,4 +97,56 @@ WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
 ORDER BY ProductName;
 --> Alfabetik sıraya göre bu iki text arasında olanları getirir.
 
+
+SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address
+FROM Customers;
+
+--> Address, PostalCode, City ve Country columnlarındaki recordları araya virgül koyarak birleştirdi ve
+Address takma ismiyle getirdi.
+
+
+inner join 2 tablo arasında ortak column varsa kullanılır.
+
+full outer join yapmak için(mysql de full outer join yok) iki tablo select ile getirilir araya union koyulur 
+union iki tabloyu birleştirir , birleştirirken ortak küme 2 kez toplandığı için 
+1ini düşürür yani ortak küme 1 kez birleştirilmiş olur duplicate olmaz.
+veya
+Cross join yapılır
+
+
+SELECT * FROM Customers
+ORDER BY Country, CustomerName;
+
+--> önce country nin alfabetik sıralamasına göre sıraladı sonra countryleri aynı olanlar arasında 
+customerName ' e göre sıraladı.
+
+SELECT * FROM Customers  WHERE CustomerName LIKE '_A%' LIMIT 3;
+Customer table ından CustomerName inin 2. harfi A olan ilk 3 record'u getirdi
+
+
+mysql select query sırası:
+
+SELECT column1, column2, ...
+FROM table1
+WHERE condition1
+GROUP BY column1, column2, ...
+HAVING condition2
+ORDER BY column1, column2, ...
+LIMIT number;
+
+
+** alias ismi verirken birden çok kelimeden oluşuyorsa ör: musteri sayisi bunu quote içine almalıyız
+AS 'musteri sayisi' şeklinde
+
+SELECT CustomerName, CONCAT_WS('......... ', Address, PostalCode, City, Country) AS Address
+FROM Customers; 
+
+birçok column'ı tek alias olarak address altında topladı CONCAT_WS ilk parametre olarak aralarına ne konulacağını
+belirtir. aralarına ......... koydu.
+
+tables lara alias (takma ad) verme :
+
+SELECT o.OrderID, o.OrderDate, c.CustomerName
+FROM Customers AS c, Orders AS o
+WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
  */
