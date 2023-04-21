@@ -110,6 +110,7 @@ inner join 2 tablo arasında ortak column varsa kullanılır.
 full outer join yapmak için(mysql de full outer join yok) iki tablo select ile getirilir araya union koyulur 
 union iki tabloyu birleştirir , birleştirirken ortak küme 2 kez toplandığı için 
 1ini düşürür yani ortak küme 1 kez birleştirilmiş olur duplicate olmaz.
+union all duplicate değerleri de getirir.
 veya
 Cross join yapılır
 
@@ -149,4 +150,25 @@ tables lara alias (takma ad) verme :
 SELECT o.OrderID, o.OrderDate, c.CustomerName
 FROM Customers AS c, Orders AS o
 WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
+
+
+CMS : Control Managment System
+Bu sistemler, programlama dilleri veya web geliştirme bilgisi gerektirmeksizin, teknik olmayan kullanıcıların içerik oluşturmasına ve yönetmesine olanak tanıyan kullanıcı dostu bir arayüz sağlar.
+ör : WordPress content managment system (cms) dir.
+
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+
+-->"Orders" tablosundaki "CustomerID" sütunu ve "Customers" tablosundaki "CustomerID" sütunu aynı değerlere sahip olduğunda iki tablonun verileri birleştirilir. 
+
+-----
+GROUP BY
+
+SELECT country, COUNT(*) as customer_count
+FROM customers
+GROUP BY country;
+
+customer_count u country ye göre grupladı. ör: germany için 5, turkey için 10...
  */
