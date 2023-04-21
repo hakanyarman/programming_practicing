@@ -1416,3 +1416,36 @@ console.log(richard.sayJobAndSalary());
 console.log(richard.car);
 richard.changeCar("Cadillac");
 console.log(richard.car);
+
+/* ---------------------- CDN -----------------------------
+
+Content Delivery Network
+
+Bir kullanıcı bir web sitesinden içerik istediğinde, CDN, içeriği kullanıcıya web sitesinin kaynak sunucusundan değil onun yerine en yakın sunucudan teslim eder. 
+Bu, içeriğin seyahat etmesi gereken mesafeyi azaltarak daha hızlı sayfa yükleme süreleri ve daha iyi bir kullanıcı deneyimi sağlar.web sitesi performansını ve güvenliğini artırabilirler.
+
+
+*/
+
+/*
+Interpreter(yorumlayıcı) - Compiler(derleyici) Farkı 
+
+### ikisi de kodu makine diline çevirmeye yarar. işlevleri aynıdır.
+
+### compiler kaynak kodu makine diline çevirerek bir DOSYA oluşturur. ve kod her çalıştırıldığında
+bu dosya kullanılır.(kodu derleyip tek bir dosyada toplar)
+compiler tüm kodu tek seferde kontrol eder, kodda birden çok hata varsa hataların
+tümünü bildirir. kodu hızlı çalıştırır ancak hata varsa çalıştırmadan önce hataları düzeltmek gerekir.
+
+### interpreter kodu satır satır yorumlayarak çalıştırır. kod her çalıştırıldığında yeniden yorumlama yapılır 
+interpreter koddaki hataları bulmak için daha iyidir. kod daha yavaş çalışır. eğer bir satır hatalı ise 
+o satıra geldiğinde hata verir ve yorumlamayı durdurur, alt satıra geçmez.
+
+### interpreter kullanan diller:
+### python, javascript, ruby
+
+### compiler kullanan diller:
+c, c++, objective-c, swift, rust ,go, kotlin  
+
+### Java hem interpreter hem de compiler kullanır.
+*/

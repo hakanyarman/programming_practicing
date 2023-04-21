@@ -169,6 +169,12 @@ GROUP BY
 SELECT country, COUNT(*) as customer_count
 FROM customers
 GROUP BY country;
+--> group by genellikle count ile beraber kullanılır.
 
 customer_count u country ye göre grupladı. ör: germany için 5, turkey için 10...
+
+----------------------------------
+HAVING
+*where de having de filtreleme işlemi yapar ancak where sorgudan önce çalışır tablodaki verileri filtreler having sorgudan sonra çalışır ve GRUPLANDIRILAN sorgu sonuçlarını filtreler
+having group by ile birlikte kullanılır.
  */

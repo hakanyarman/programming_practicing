@@ -10,7 +10,6 @@ import numpy as np
 
 
 
-
 app = Flask(__name__)
 @app.route('/')
 def hello_world():
@@ -24,16 +23,17 @@ def hello_world():
 @app.route('/homepage')
 def homepage():
     return render_template("homepage.html")
-
-
+ 
 
 @app.route('/profile')
 def profile():
     return render_template("profile.html")
 
+
 @app.route('/about')
 def about():
     return render_template("about.html")
+
 
 @app.route('/contact')
 def contact():
@@ -48,6 +48,7 @@ def other():
 def topbar():
     return render_template("topbar.html")
 
+
 """
 @app.route('/styles.css')
 def other2():
@@ -59,15 +60,18 @@ def other2():
 def form():
     return render_template("form.html")
 
+
 @app.route('/form_submit',methods=['GET', 'POST'])
 def form_submit():
     data = request.form['fname']
     print (data)
     return data
 
+
 @app.route('/<path:path>')
 def send_report(path):
     return send_from_directory('static', path)
+
 
 @app.route('/grid')
 def grid():
@@ -76,9 +80,11 @@ def grid():
     # return render_template("grid.html",data2=randint(0,100))
     return render_template("grid.html", len = len(Pokemons), Pokemons = Pokemons)
 
+
 @app.route('/grid-sidebar')
 def gridSideBar():
     return render_template("grid-sidebar.html")
+
 
 @app.route('/table')
 def table():
