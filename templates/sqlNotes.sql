@@ -177,4 +177,8 @@ customer_count u country ye göre grupladı. ör: germany için 5, turkey için 
 HAVING
 *where de having de filtreleme işlemi yapar ancak where sorgudan önce çalışır tablodaki verileri filtreler having sorgudan sonra çalışır ve GRUPLANDIRILAN sorgu sonuçlarını filtreler
 having group by ile birlikte kullanılır.
+
+----------------------------------------
+Primary Key sayesinde sorgu performansı artar ve sorgu işlemi daha hızlı gerçekleşir.genelde id primary key
+seçilir. varchar tipinde bir column u primary key seçmek sorgu hızını düşürecektir.
  */
