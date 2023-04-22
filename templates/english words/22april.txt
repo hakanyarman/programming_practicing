@@ -1,0 +1,8 @@
+extent : genişlik,boyut,kapsam,derece
+evident : belirgin, apaçık
+sweat : ter, terlemek
+rage : öfke
+fierce : şiddetli,kızgın(angry and violent)
+brief : kısa bilgi
+envy : kıskanmak
+bargain : pazarlık, bir mal için ucuz fiyat.
