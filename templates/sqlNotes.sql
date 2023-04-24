@@ -181,4 +181,38 @@ having group by ile birlikte kullanılır.
 ----------------------------------------
 Primary Key sayesinde sorgu performansı artar ve sorgu işlemi daha hızlı gerçekleşir.genelde id primary key
 seçilir. varchar tipinde bir column u primary key seçmek sorgu hızını düşürecektir.
+
+-----------------
+Insert Into Select : 
+bir tablodan veri seçip, seçilen bu verileri başka bir tabloya ekler.
+
+INSERT INTO yeni_musteriler (isim, email)
+SELECT isim, email
+FROM musteriler;
+
+musteriler tablosundan isim ve email columnlarını aldı, yeni_musteriler tablosuna ekledi.
+-----------------
+CASE:
+koşullara göre farklı değer döndürmek için kullanılır
+
+SELECT fiyat,
+       CASE
+         WHEN fiyat < 10 THEN 'Düşük'
+         WHEN fiyat < 50 THEN 'Orta'
+         ELSE 'Yüksek'
+       END AS seviye
+FROM urunler;
+
+urunler tablosundan fiyat columnuna bakar fiyatı 10 dan küçük olanları düşük,50den küçük olanları orta
+geri kalanları yüksek olarak urunler tablosunun seviye columnuna ekler
+----------------------
+IFNULL() function : 
+
+eğer null değer varsa onu belli bir değere atamak için kullanılır genelde 0'a dönüştürmek için(int'de).
+
+SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0))
+FROM Products;
+
+--> UnitsOnOrder null ise 0 ver. çünkü null kalırsa çarpım değeri null çıkar.
+
  */
