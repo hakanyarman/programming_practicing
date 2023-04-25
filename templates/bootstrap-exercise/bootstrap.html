@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +13,15 @@
       height: 100vh;
     }
   </style>
+    <script>
+      function change(){
+        var elements = document.getElementsByClassName('col-sm-12');
+        for(var i=0; i<elements.length; i++) { 
+        elements[i].innerHTML="texts were changed.";
+        }
+      }
+    </script>
 </head>
-
 <body>
   <div class="flex-container">
     <!--
@@ -72,12 +78,15 @@
     </div>
   </div>
 <br><br><br>
-  <div class="container">
+  <div class="container-fluid"> 
+    <!-- container-fluid ==>>  sayfanın genişliğinin tamamını kaplar. sağda ve solda boşluk bırakmaz. -->
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-4">Merhaba Nasılsınız? Benim adım Hakan</div>
       <div class="col-sm-12 col-md-4 col-lg-4">Merhaba Nasılsınız? Benim adım Hakan</div>
       <div class="col-sm-12 col-md-12 col-lg-4">Merhaba Nasılsınız? Benim adım Hakan</div>
   </div>
+  <br>
+  <button type="button" class="btn btn-success" onclick="change()">change the texts</button>
   </div>
     <!-- MULTIPLE BREAKPOINTS
     
@@ -95,5 +104,6 @@
       border: 5px solid green;
     }
   </style>
+
 </body>
 </html>
