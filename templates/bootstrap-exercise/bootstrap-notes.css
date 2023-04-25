@@ -2,4 +2,38 @@
 12 columndan oluşan flexbox üzerine inşa edilmiştir.
 
 Bootstrap Mobile First yaklaşımı, web tasarımının mobil cihazlarda optimize edilerek başlatılması anlamına gelir. Bu yaklaşım, önce mobil cihazlar için tasarım yapılmasını, ardından daha büyük ekran boyutları için uygun hale getirilmesini önerir. Bu, web sitesinin mobil cihazlarda daha hızlı yüklendiği ve daha iyi performans gösterdiği anlamına gelir.
+
+
+Bootstrap, beş farklı breakpoint sağlar ve bu breakpointler şunlardır:
+
+xs (extra small): Ekran genişliği 576 pikselden daha küçük olan cihazlar için.
+
+sm (small): Ekran genişliği 576 piksel ve 768 piksel arasında olan cihazlar için.(mobile)
+
+md (medium): Ekran genişliği 768 piksel ve 992 piksel arasında olan cihazlar için.(ipad)
+
+lg (large): Ekran genişliği 992 piksel ve 1200 piksel arasında olan cihazlar için.(laptop)
+
+xl (extra large): Ekran genişliği 1200 pikselden daha büyük olan cihazlar için.(desktop)
+
+Bu breakpointler, farklı ekran boyutlarına sahip cihazlarda sayfanın görüntülenmesini optimize etmek için kullanılır. Bootstrap'in kullanımı, bu breakpointleri kullanarak web sayfasındaki içeriğin nasıl görüntüleneceğini belirlemek için CSS sınıflarını değiştirmek yoluyla yapılır.
+
+bu breakpointler sayesinde @media query yapmamıza gerek kalmaz.
+ör:
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2">abcabc</div> 
+      <div class="col-sm-4">abcabc</div>
+      <div class="col-sm-6">abcabc</div>
+    </div>
+    <div class="row">
+      <div class="col-sm">abcabc</div> 
+      <div class="col-sm">abcabc</div>
+      <div class="col-sm">abcabc</div>
+    </div>
+  </div>
+
+
+  
 */
