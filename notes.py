@@ -1,4 +1,8 @@
+from time import sleep
 from swampy.TurtleWorld import *
+
+
+
 
 world = TurtleWorld()
 # bob = Turtle()
@@ -375,3 +379,59 @@ name,surname ,age = ('Hakan','Yarman',21)
 print(name,surname,age)
 print(surname)
 
+# First Class Object
+
+#fonksiyonlar , classlar ve diğer objectler birinci sınıf nesnedir (first class object dir)
+
+# first class object ler 
+# 1) değişkene atanabilir => ör:
+
+# def say_hello():
+#     print("Hello")
+
+# hello = say_hello()
+
+
+# 2) fonksiyon argümanı olarak kullanılabilir => ör:
+
+def sum(num1,num2):
+    return num1 + num2
+
+def multiply(num1,num2):
+    return num1 * num2
+
+
+def calculate(operation,num1,num2):
+    return operation(num1,num2)   # function içinde bir başka function'u argüman olarak kullandık.
+
+result = calculate(multiply,5,3)    
+print(result)
+
+# 3) bir fonksiyon tarafından döndürülebilir
+# 4) başka bir nesne içinden tanımlanabilir
+
+#----------------------------------------------
+
+#nested function 
+
+def outer_func():
+    print("outer")
+
+    def inner_func():
+        print("inner")
+
+    inner_func()
+
+
+# inner function a sadece outer function içinden erişilebilir
+
+# inner_func() => 'inner_func' is not defined
+
+outer_func()  # => outer inner
+
+
+def delayed_function():
+    time.sleep(4)
+    print(8)
+
+delayed_function()

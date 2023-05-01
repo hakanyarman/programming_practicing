@@ -7,11 +7,30 @@ from flask import send_from_directory
 from flask import Flask, request
 import json
 import numpy as np
+import random
 
 
 
 app = Flask(__name__)
-@app.route('/')
+#Python'da bir programı yürüttüğünüzde, Python yürütülebilir betikleri modüller olarak adlandırır. Modüller bir programda kullanılabilecek kod bloklarını içerirler. Modüllerin kendi ad alanları vardır ve modül içinde tanımlanan fonksiyonlar, sınıflar ve değişkenler bu ad alanında bulunur.
+
+# Her modülün bir ismi vardır ve bu isim __name__ özelliğiyle temsil edilir. Eğer bir modül başka bir modül tarafından içe aktarılırsa, içe aktarılan modülün __name__ özelliği, içe aktarılan modülün adını alır. Ancak, bir modül doğrudan çalıştırıldığında, __name__ özelliği "__main__" olarak ayarlanır.
+
+#Bu nedenle, __name__ özelliği, bir modülün nasıl çalıştırıldığını belirlemek için kullanılır. Bir modülün doğrudan çalıştırılması durumunda, genellikle bir if __name__ == "__main__": koşulu kullanarak, modülün ana kod bloğunu yürütürüz. Ancak, bir modül başka bir modül tarafından içe aktarılırsa, bu koşul sağlanmaz ve ana kod bloğu çalıştırılmaz.
+
+
+# print(app)  =>  # <Flask 'main'>
+
+# print(__name__) => # __main__ => o anda çalıştırılan dosyayı belirtir
+
+# print(random.random())  => 0.020379877529716373
+# print(random.__name__) => random => modul ün ismini yazdı 
+#-----------------------------------------------------
+
+# decore edilmek istenen function un üstüne @decorator_func_name yazarak kullanılır. kod tekrarını önler.
+# burada app.route decorator function u hello_world functionu nu sarar ve parametre olarak hello_world func alır.
+# içine aldığı fonksiyona bazı fonksiyonellikler de ekler
+@app.route('/') # decorator function.
 def hello_world():
     return """<h1>
         console
