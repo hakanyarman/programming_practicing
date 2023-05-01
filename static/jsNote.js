@@ -1448,4 +1448,33 @@ o satıra geldiğinde hata verir ve yorumlamayı durdurur, alt satıra geçmez.
 c, c++, objective-c, swift, rust ,go, kotlin  
 
 ### Java hem interpreter hem de compiler kullanır.
+
+-------------------------------------------------------
+CLI COMMANDS
+
+# pwd => print working directory 
+# cd => change directory . bulunualn directory yi yazdırır.(windows'da)
+
+# ls => bulunulan directory deki bütün klasör ve dosyaları listeler
+# dir => windows'da bulunulan directory deki bütün klasör ve dosyaları listeler
+
+command line da bir şey yazacakken ilk harflerini yazdıktan sonra tab'a basarsak otomatik tamamlar öneriye göre.
+ör: cd des (şimdi tab'a basılırsa ) cd desktop diye tamamlar.
+
+mkdir => make directory (yeni klasör oluşturur)
+
+touch => yeni dosya oluşturur
+
+# touch ls pwd gibi komutlar linux komutu olduğu için command prompt da çalışmaz.
+bu komutları git bash terminalinde kullanabiliriz.
+
+rm => remove . dosya siler. 
+
+cd .. => bir önceki (parent) directory ye gider.
+
+
+rm ile klasör silinemez. klsörün içinde bulunan dosyalar silinebilir.
+
+klasör silmek için rm -rf kullanılır. klasörün içinde bulunan dosyalarla beraber siler.
+
 */
