@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model (DOM)</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <p class="paragraph" id="p1">Merhabalar</p>
+        <b>Yazı</b>
+        <b>Yazı</b>
+        <b>Yazı</b>
+    </div>
+    <script>
+        let name = "Hakan";
+        function changeText(){
+            document.getElementById("p1").innerHTML = "Nasılsınız " + name;
+            
+            document.getElementById("p1").style.color = "red";
+            document.getElementById("p1").style.fontSize = "5em";
+            document.getElementById("div1").setAttribute("class","paragraphContainer")
+            // div1 id li div'e class attribute u ekledi ve o attribute a paragraphContainer değerini verdi
+            const changedTextForbTag = "div1 id sinin içinde bulunan b tagine sahip elementler değiştirildi."
+            for(let i =0; i<3 ; i++){
+                document.getElementById("div1").getElementsByTagName("b")[i].innerHTML = changedTextForbTag;
+            }
+        }
+        setTimeout(changeText, 3000); // fonksiyonun çalışmasını sayfa yüklendikten 3 saniye sonraya geciktirdi.
+        const p1 = document.getElementById("p1");
+        function alignCenter(){
+            p1.style.textAlign = "center";
+        }
+        document.getElementById("p1").onclick = alignCenter // p1 id li elemente tıkladığımızda alignCenter functionu
+        // çağırarak p1 elementini ortaladı.
+        
+ 
+        // document.querySelectorAll("p.paragraph"); => paragraph class ismine sahip p taglerinin hepsini getirir
+        // document.querySelector() => sadece 1. sini getirir diğerlerini getirmez. 
+    </script>
+</body>
+</html>
