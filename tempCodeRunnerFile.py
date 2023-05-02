@@ -1,5 +1,4 @@
-def delayed_function():
-    time.sleep(4)
-    print(8)
+name = "Hakan"
+age = 21
 
-delayed_function()
+print(f"My name is {name} and I am {age} years old.")
