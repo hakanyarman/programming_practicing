@@ -10,6 +10,25 @@
             height: 15em;
             width: 15em;
         }
+        #hoverButton{
+            background-color: aqua;
+            border-radius: 50%;
+            width: 8em;
+            height: 4em;
+            font-size: 1.2em;
+            color: aliceblue;
+        }
+        #hoverButton:hover{
+            background-color :burlywood;
+        }
+        #event{
+            border: 2px solid red;
+            width: 300px;
+            text-align: center;
+            color: red;
+            height: 200px;
+            line-height: 200px;
+        }
     </style>
 </head>
 <body>
@@ -27,6 +46,11 @@
     <time>
         <p id="time"></p>
     </time>
+
+    <div class="container">
+        <button id="hoverButton" onmouseover="mOver()" onmouseout="mOut()"><i>Mouse Over</i></button>
+    </div><br>
+    <div id="event">Press Enter To Change Color Div</div>
     <script>    
         let name = "Hakan";
         function changeText(){
@@ -57,6 +81,17 @@
         }
         document.getElementById("time").innerHTML = "<i> time is " + new Date().getHours() + ":" + new Date().getMinutes() + " now </i>" 
 
+        function mOver(){
+            document.getElementById("hoverButton").textContent = "Mouse Out"
+        }
+        function mOut(){
+            document.getElementById("hoverButton").textContent = "Mouse Over"
+        }
+        document.addEventListener("keypress",function(event){
+            if(event.key == "Enter"){
+                document.getElementById("event").style.backgroundColor = "blue"
+            }
+        })
     </script>
 </body>
 </html>
