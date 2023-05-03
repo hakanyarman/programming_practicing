@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Object Model (DOM)</title>
     <style>
-
+        #myImg{
+            height: 15em;
+            width: 15em;
+        }
     </style>
 </head>
 <body>
@@ -16,7 +19,15 @@
         <b>Yazı</b>
         <b>Yazı</b>
     </div>
-    <script>
+    <div class="img">
+        <img src="bootstrap-exercise\flower.jpg" alt="image"  id="myImg">
+        <br>
+        <button id="imgButton" onclick="changeImg()">Change the image</button>
+    </div>
+    <time>
+        <p id="time"></p>
+    </time>
+    <script>    
         let name = "Hakan";
         function changeText(){
             document.getElementById("p1").innerHTML = "Nasılsınız " + name;
@@ -41,6 +52,11 @@
  
         // document.querySelectorAll("p.paragraph"); => paragraph class ismine sahip p taglerinin hepsini getirir
         // document.querySelector() => sadece 1. sini getirir diğerlerini getirmez. 
+        function changeImg(){
+            document.getElementById("myImg").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_nF97CSsqJIjQQuBJX5M0wHU4zQYfKsQX2A&usqp=CAU"
+        }
+        document.getElementById("time").innerHTML = "<i> time is " + new Date().getHours() + ":" + new Date().getMinutes() + " now </i>" 
+
     </script>
 </body>
 </html>
