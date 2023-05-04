@@ -215,4 +215,16 @@ FROM Products;
 
 --> UnitsOnOrder null ise 0 ver. çünkü null kalırsa çarpım değeri null çıkar.
 
+---------------------------
+table dan record(row) silmek için delete kullanılır
+table veya database silmek için delete kullanılmaz, drop kullanılır.
+column silmek için de drop kullanılır.
+
+table daki tüm verileri silmek ama table ı bırakmak için truncate kullanılır
+TRUNCATE Table Persons;
+
+column eklemek çıkarmak (table ı değiştirmek ) için alter table kullanılır
+ALTER TABLE Persons
+ADD Birthday DATE 
+=> Persons table ına DATE veri tipinde Birthday adlı column ekler
  */
