@@ -1478,3 +1478,13 @@ rm ile klasör silinemez. klsörün içinde bulunan dosyalar silinebilir.
 klasör silmek için rm -rf kullanılır. klasörün içinde bulunan dosyalarla beraber siler.
 
 */
+
+
+const jsonData = '{"brand":"ford","model":"mustang","year":2015}';
+
+const jsData = JSON.parse(jsonData);
+const carBrand = jsData.brand;
+console.log(carBrand);
+
+
+// rfce react kod template i oluşturmak için kısayoldur

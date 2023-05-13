@@ -125,3 +125,27 @@ if __name__ == '__main__':
  
     
     app.run(debug=True)
+
+
+tuple = ("hakan","eren","furkan","hakan")
+print(tuple) # tuple da duplicate veriye izin verilir.
+
+# tuple[0] = "emre" #'tuple' object does not support item assignment
+
+list = list(tuple)
+print(list) # ['hakan', 'eren', 'furkan']
+
+list[2] = "yağız" # assignment yapılabilir.
+
+print(list)
+
+myset = {"apple", "banana", "cherry","cherry"}
+print(myset) # {'apple', 'banana', 'cherry'} duplicate veriler bir kez yazdırılır.
+
+# myset[0] = "orange"  # 'set' object does not support item assignment
+print(myset)
+
+print(len(myset)) # 3 çünkü duplicate veriyi 1 tane olarak sayar.
+
+# set lerin indexleri yoktur.unordered dır.
+
