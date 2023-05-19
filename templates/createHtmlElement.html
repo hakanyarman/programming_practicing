@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <div class="button">
+        <button onclick="toggle()">Toggle the text</button>
+    </div>
+    <h3>input</h3>
+    <input type="text" name="" id="input" value="hakan" style="margin-top: 10px;">
+    <div class="button" style="margin-top: 10px;">
+        <button onclick="createNewTag()">Create new html tag with input text</button>
+    </div>
+    <p id="paragraph"></p>
+    
+    <script>
+        function toggle(){
+            const h1 = document.querySelector('h1')
+            if(h1.innerHTML=="Hello"){
+                h1.innerHTML = "Goodbye";
+            }else{
+                h1.innerHTML = "Hello";
+            }
+        }
+        document.onkeydown = function (e) {
+            document.getElementById("paragraph").innerHTML = e.key + " key pressed"
+};
+    function createNewTag(){
+        const box = document.createElement("div");
+        box.id = "box";
+        box.style.textAlign = "center"
+        box.style.border = "2px solid red"
+        box.style.marginBottom = "5px"
+        box.style.backgroundColor = "blue"
+        document.body.appendChild(box)
+        box.innerHTML= document.getElementById("input").value;
+    };
+    </script>
+</body>
+</html>
