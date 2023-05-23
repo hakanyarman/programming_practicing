@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#submit').disabled = true;
+            document.querySelector('#task').onkeyup = () => {
+                document.querySelector('#submit').disabled = false;
+            }
+
+            document.querySelector('form').onsubmit = () => {
+                const task = document.querySelector('#task').value;
+                const li = document.createElement('li');
+                li.innerHTML = task;
+                document.querySelector('#tasks').append(li);
+                document.querySelector('#task').value = '';
+                document.querySelector('#submit').disabled = true;
+                return false; // submit dediğinde formun submit edilmesini ve sayfanın yenilenmesini önlemek için
+            }
+
+        })
+
+        localStorage.setItem("first","hakan")
+        let first = localStorage.getItem("first")
+        function showFirst(){
+            document.getElementById("first").innerHTML = first;
+        }
+        function push(){
+            localStorage.setItem("other",document.querySelector('#task').value)
+        }
+
+        let movies = ["kurtlar vadisi","hızlı ve öfkeli","titanic"];
+        localStorage.setItem("movies",JSON.stringify(movies));
+        // local storage a array atılırken stringfy yapılır
+        // array çekilirken parse yapılır.
+
+        let namesOfMovies = JSON.parse(localStorage.getItem("movies"))
+        console.log(namesOfMovies);
+        namesOfMovies.forEach(movie => {
+            console.log(movie)
+        });
+    </script>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <ul id="tasks">
+
+    </ul>
+    
+    <form>
+        <input id="task" placeholder="New Task" type="text" required>
+        <input id="submit"  type="submit" value="submit">
+    </form>
+    <h3>pull data from local storage</h3>
+    <button onclick="showFirst()">show value of first key</button>
+    <first id="first"></first>
+
+    <h3>push data to local storage</h3>
+    <button onclick="push()">push data to local storage</button>
+</body>
+</html>
