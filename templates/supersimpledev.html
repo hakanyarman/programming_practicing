@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>supersimpledev exercise</title>
+</head>
+<body>
+    <div class="container">
+        <h1>change website's title</h1>
+        <form onsubmit="return false">
+            <input id ="title-input" type="text" placeholder="type the title">
+            <button id="submit" onclick="changeSiteTitle()">submit</button>
+        </form>
+        <br>
+        <form onsubmit="return false">
+            <input type="text" id="input1" placeholder="name1">
+            <input type="text" id="input2" placeholder="name2">
+            <input type="text" id="input3" placeholder="name3">
+            <button id="submit" onclick="addHello()">hello ekle</button>
+        </form>
+        <greetings></greetings>
+    </div>
+    <script>
+        let buton = document.createElement("button");
+        buton.innerHTML = "tikla";
+        document.querySelector(".container").appendChild(buton)
+        
+        // document.querySelector("#submit").onsubmit = changeSiteTitle();
+        function changeSiteTitle() {
+            let input = document.querySelector("#title-input").value;
+            document.title = input;
+        }
+
+        function addHello(){
+            const input1 = document.querySelector("#input1").value;
+            const input2 = document.querySelector("#input2").value;
+            const input3 = document.querySelector("#input3").value;
+            const arr = [input1,input2,input3];
+            const result = [];
+            arr.forEach(element => {
+                element= "Hello " + element;
+                result.push(element)
+            });
+            document.querySelector("greetings").innerHTML = result;
+            console.log(result);
+        }
+    </script>
+</body>
+</html>
