@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addToCart('apple')">apple</button>
+    <button onclick="addToCart('tomato')">tomato</button>
+    <button onclick="addToCart('orange')">orange</button>
+
+    <div id="cart">
+        
+    </div>
+    <script>
+            function addToCart(item) {
+            const product = document.createElement("p");
+            product.innerText= item;   
+            document.querySelector("#cart").appendChild(product);
+            const deleteButton = document.createElement("button");
+            deleteButton.innerText = "delete";
+            product.appendChild(deleteButton);  
+            deleteButton.onclick = function() {
+                product.remove();
+            }
+        }
+    </script>
+</body>
+</html>

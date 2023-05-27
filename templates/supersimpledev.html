@@ -22,6 +22,11 @@
         </form>
         <greetings></greetings>
     </div>
+    <div class="counter">
+        <h2>counter</h2>
+        <h1 id="count">0</h1>
+        <button id="counter-button" onclick="counter()">up</button>
+    </div>
     <script>
         let buton = document.createElement("button");
         buton.innerHTML = "tikla";
@@ -46,6 +51,35 @@
             document.querySelector("greetings").innerHTML = result;
             console.log(result);
         }
+
+        function multipleArray(strArr,times) {
+            const result2 = [];
+            strArr.forEach(element => {
+                for(let i=0; i<times; i++){
+                    result2.push(element)
+                }      
+            });
+            for(let j=0; j<result2.length ; j++){
+                console.log(result2[j])
+            }
+        }    
+        multipleArray(["hakan","emre","eren"],5)
+
+        function arraySum(numArr) {
+            let sum = 0;
+            numArr.forEach(function(element){
+                sum += element;
+            })
+            console.log(sum);
+        }
+        arraySum([2,5,8,9])
+
+        let count = 0;
+        function counter(){
+            count++
+            document.querySelector("#count").innerHTML = count;
+        }
+        
     </script>
 </body>
 </html>
