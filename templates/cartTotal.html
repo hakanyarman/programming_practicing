@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Total</title>
+    <style>
+        #receiptItem{
+            margin-top: 10px;
+            border-bottom: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="displayReceipt(cart1)">Display receipt</button>
+    <div id="receipt">
+
+    </div>
+    <script>
+        function cartTotal(cartArray) {
+            let total = 0;
+            cartArray.forEach(element => {
+                total += (element.price)*(element.quantity);
+            });
+            console.log(total);
+        }
+        cartTotal([
+        { name: 'Apple', price: 4, quantity: 2 },
+        { name: 'Orange', price: 3, quantity: 3 }
+        ]);
+        const cart1 = [{ name: 'Apple', price: 4, quantity: 2 },
+        { name: 'Cucumber', price: 6, quantity: 2 },
+        { name: 'Strawberry', price: 5, quantity: 2 },
+        { name: 'Cherry', price: 12, quantity: 2 },
+        { name: 'Tomato', price: 2, quantity: 2 },
+        { name: 'Pineapple', price: 12, quantity: 2 }];
+
+        cartTotal(cart1);
+
+        function displayReceipt(cartArray){
+            const receipt = document.createElement("div");
+            receipt.id = "receiptItem";
+            let result = "";
+            let total = 0;
+            cartArray.forEach(element => {
+                total += (element.price)*(element.quantity);
+                result += element.name + " $" + element.price + " * " + element.quantity + " = " + element.price*element.quantity + "<br>";
+            });
+            console.log(result);
+            receipt.innerHTML = result + "<br>"  + "total price= " + total + "<br>";
+            document.querySelector("#receipt").appendChild(receipt);
+    
+        }
+        displayReceipt()
+
+    </script>
+</body>
+</html>
