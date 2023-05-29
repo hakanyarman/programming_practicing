@@ -13,11 +13,16 @@
     </style>
 </head>
 <body>
-    <button onclick="displayReceipt(cart1)">Display receipt</button>
+    <button onclick="displayReceipt(cart2)">Display receipt cart2</button>
+    <button onclick="displayReceipt(cart1)">Display receipt cart1</button>
     <div id="receipt">
 
     </div>
     <script>
+        const cart2 = [
+        { name: 'Apple', price: 4, quantity: 2 },
+        { name: 'Orange', price: 3, quantity: 3 }
+        ];
         function cartTotal(cartArray) {
             let total = 0;
             cartArray.forEach(element => {
@@ -52,8 +57,74 @@
             document.querySelector("#receipt").appendChild(receipt);
     
         }
-        displayReceipt()
+        displayReceipt([
+        { name: 'Apple', price: 4, quantity: 2 },
+        { name: 'Orange', price: 3, quantity: 3 }
+        ])
 
+        // array filter method
+        
+
+        const priceLessThanSeven = cart1.filter((item) => item.price < 7 );
+        console.log(priceLessThanSeven);
+        const itemsPriceLessThanSeven = [];
+        priceLessThanSeven.forEach(function(element){
+            itemsPriceLessThanSeven.push(element.name);
+        });
+        console.log(itemsPriceLessThanSeven);
+
+        //-----------------------------------------
+
+        const people = [
+            {name: "Hakan", age:21, gender: "male"},
+            {name: "Elif", age:14, gender: "female"},
+            {name: "Zeynep", age:18, gender: "female"},
+            {name: "Eren", age:16, gender: "male"},
+        ];  
+         (people.filter(item => item.age>=18 && item.gender == "female")).forEach(element => console.log(element.name));
+        
+        const nums = [1,2,3,4,5,6,7,8,9];
+        const evenNums = nums.filter(num => num%2==0);
+        console.log(evenNums);
+
+
+        function aboveFreezing(tempsArray) {
+            const above = tempsArray.filter(temp => temp > 32);
+            console.log(above);
+            above.forEach(element => {
+                console.log(`${element} is above freezing degree`);
+            })
+        };
+        aboveFreezing([35,74,12,30,18,38,27]);
+
+        function removeRedPens(pensArr) {
+            const notRedPens = pensArr.filter(pen => pen.color != "red");
+            console.log(notRedPens);
+        } 
+        removeRedPens([{ name: 'a', color: 'red' }, { name: 'b', color: 'white' },{ name: 'c', color: 'black' },{ name: 'd', color: 'red' },{ name: 'e', color: 'purple' }]);
+
+
+        function max(numsArr) {
+            let max = numsArr[0];
+            numsArr.forEach(num => {
+                if(num > max){
+                    max = num;
+                }
+            })
+            console.log(max);
+        }
+        max([16,18,8,3,-4,0,15])
+
+        function getPositiveMin(numsArr){
+            let positiveMin = Infinity;
+            numsArr.forEach(num => {
+                if(num >0 && num<positiveMin){
+                    positiveMin = num;
+                }
+            })
+            console.log(positiveMin);
+        }
+        getPositiveMin([16,18,8,3,-4,0,15])
     </script>
 </body>
 </html>
