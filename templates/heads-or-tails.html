@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Yazı Tura</title>
+</head>
+<style>
+    button{
+        width: 200px;
+    }
+    #y-button{
+        position: relative;
+        left: 40%;
+    }
+    #x-button{
+        position: relative;
+        left: 35%;
+    }
+    h1{
+        position: relative;
+        left: 40%;
+    }
+    
+</style>
+<body>
+    <h1>Yazı mı Tura mı?</h1>
+    <div class="button-container">
+        <button id="x-button" onclick="guessYazi()">Yazı</button>
+        <button id="y-button" onclick="guessTura()">Tura</button>
+    </div>
+    <div class="result">
+
+    </div>
+    <div id="score"></div>
+    <div id="win-or-lost"></div>
+    <script>
+        const score = {
+            won : 0,
+            lost : 0
+        }
+
+        function guessYazi(){
+            let randomNumber = Math.random();
+            let result = "";
+            if(randomNumber < 0.5){
+                result = "Kazandın";
+                score.won ++;
+            }else{
+                result = "Kaybettin"
+                score.lost++;
+            }
+            const resultDiv = document.createElement("div");
+            resultDiv.innerHTML = result;
+            document.querySelector(".result").appendChild(resultDiv);
+            document.querySelector("#score").innerHTML = "Kazandın : " + score.won + " Kaybettin : " + score.lost;
+
+            if(score.won + score.lost === 10){
+                if(score.won > score.lost){
+                    document.querySelector("#win-or-lost").innerHTML = "you win the game";
+                }else if(score.won < score.lost){
+                document.querySelector("#win-or-lost").innerHTML = "you lost the game";
+                }else{
+                document.querySelector("#win-or-lost").innerHTML = "berabere";
+            }
+            document.querySelectorAll("button").forEach(button => button.disabled = true)
+        }
+        }
+       
+        function guessTura(){
+            let randomNumber = Math.random();
+            let result = "";
+            if(randomNumber > 0.5){
+                result = "Kazandın";
+                score.won++;
+            }else{
+                result = "Kaybettin"
+                score.lost++;
+            }
+            const resultDiv = document.createElement("div");
+            resultDiv.innerHTML = result;
+            document.querySelector(".result").appendChild(resultDiv);
+            document.querySelector("#score").innerHTML = "Kazandın : " + score.won + " Kaybettin : " + score.lost;
+
+            if(score.won + score.lost === 10){
+                if(score.won > score.lost){
+                    document.querySelector("#win-or-lost").innerHTML = "Oyunu kazandın";
+                }else if(score.won < score.lost){
+                document.querySelector("#win-or-lost").innerHTML = "Oyunu kaybettin";
+                }else{
+                document.querySelector("#win-or-lost").innerHTML = "Berabere";
+            }
+            document.querySelectorAll("button").forEach(button => button.disabled = true)
+        }
+        }
+        
+        // oyun 10 da bitmeli 10 dan sonra button inaktive olmalı ve win-or-lost divine sonuç yazılmalı 
+        
+    </script>
+    
+</body>
+</html>

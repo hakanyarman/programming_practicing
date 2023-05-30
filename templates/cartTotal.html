@@ -124,7 +124,35 @@
             })
             console.log(positiveMin);
         }
-        getPositiveMin([16,18,8,3,-4,0,15])
+        getPositiveMin([16,18,8,3,-4,0,15]);
+
+        function greet(name) {
+        if (!name) {
+            // if there is no parameter (name = undefined => false) !name = true
+            console.log(name);
+          console.log('Hi');
+        } else {
+          console.log(`Hello ${name}`);
+        }
+      }
+      greet('emre');
+      greet('eren');
+      greet();
+
+
+      function compareProduct(product1, product2) {
+        const result = product1.price < product2.price ? `${product1.name} is cheaper than ${product2.name}` : `${product2.name} is cheaper than ${product1.name}`;
+        console.log(result);
+      }
+      const item1 = {
+        name: "basketball",
+        price: 250
+      }
+      const item2 = {
+        name: "socks",
+        price: 25
+      }
+      compareProduct(item1, item2);
     </script>
 </body>
 </html>
