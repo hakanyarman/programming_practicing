@@ -19,19 +19,23 @@
         position: relative;
         left: 40%;
     }
-    
+    .circle{
+        height: 200px;
+        border-radius: 100%;
+    }
 </style>
 <body>
     <h1>Yazı mı Tura mı?</h1>
     <div class="button-container">
-        <button id="x-button" onclick="guessYazi()">Yazı</button>
-        <button id="y-button" onclick="guessTura()">Tura</button>
+        <button id="x-button" class="button x deneme" onclick="guessYazi()">Yazı</button>
+        <button id="y-button" class="button y deneme" onclick="guessTura()">Tura</button>
     </div>
     <div class="result">
-
     </div>
     <div id="score"></div>
     <div id="win-or-lost"></div>
+    <button onclick="window.location.reload()" id="replay">Yeniden Oyna</button>
+    <button class="button" onclick="makeCircle(this)">make me circle</button>
     <script>
         const score = {
             won : 0,
@@ -61,7 +65,7 @@
                 }else{
                 document.querySelector("#win-or-lost").innerHTML = "berabere";
             }
-            document.querySelectorAll("button").forEach(button => button.disabled = true)
+            document.querySelectorAll(".button").forEach(button => button.disabled = true)
         }
         }
        
@@ -93,7 +97,13 @@
         }
         
         // oyun 10 da bitmeli 10 dan sonra button inaktive olmalı ve win-or-lost divine sonuç yazılmalı 
+        const button = document.querySelector(".button");
+        console.log(button.classList);
+        button.classList.add("eklenen-class");
         
+        function makeCircle(element) {
+           element.classList.add("circle");
+        }
     </script>
     
 </body>
