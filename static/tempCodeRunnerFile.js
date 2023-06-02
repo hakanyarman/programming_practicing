@@ -1,6 +1,5 @@
-const jsonData = '{"brand":"ford","model":"mustang","year":2015}';
-
-const jsData = JSON.parse(jsonData);
-console.log(jsData);
-const carBrand = jsData.brand;
-console.log(carBrand);
+     
+      function addNumber(arr,num) {
+        return arr.map((x) => x + num);
+      };
+      console.log(addNumber([1, 2, 3], 2));

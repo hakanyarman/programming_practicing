@@ -6,6 +6,9 @@
 <style>
     button{
         width: 200px;
+        cursor: pointer;
+        border-radius: 20px;
+        font-weight: bold;
     }
     #y-button{
         position: relative;
@@ -64,8 +67,8 @@
                 document.querySelector("#win-or-lost").innerHTML = "you lost the game";
                 }else{
                 document.querySelector("#win-or-lost").innerHTML = "berabere";
-            }
-            document.querySelectorAll(".button").forEach(button => button.disabled = true)
+                }
+             document.querySelectorAll(".button").forEach(button => button.disabled = true)
         }
         }
        
@@ -84,15 +87,15 @@
             document.querySelector(".result").appendChild(resultDiv);
             document.querySelector("#score").innerHTML = "Kazandın : " + score.won + " Kaybettin : " + score.lost;
 
-            if(score.won + score.lost === 10){
+             if(score.won + score.lost === 10){
                 if(score.won > score.lost){
-                    document.querySelector("#win-or-lost").innerHTML = "Oyunu kazandın";
+                    document.querySelector("#win-or-lost").innerHTML = "you win the game";
                 }else if(score.won < score.lost){
-                document.querySelector("#win-or-lost").innerHTML = "Oyunu kaybettin";
+                document.querySelector("#win-or-lost").innerHTML = "you lost the game";
                 }else{
-                document.querySelector("#win-or-lost").innerHTML = "Berabere";
-            }
-            document.querySelectorAll("button").forEach(button => button.disabled = true)
+                document.querySelector("#win-or-lost").innerHTML = "berabere";
+                }
+             document.querySelectorAll(".button").forEach(button => button.disabled = true)
         }
         }
         
@@ -103,7 +106,9 @@
         
         function makeCircle(element) {
            element.classList.add("circle");
+           console.log(element.classList.contains('circle'));
         }
+        
     </script>
     
 </body>
