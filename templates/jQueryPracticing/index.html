@@ -8,17 +8,20 @@
 
 </head>
 <body>
-    <button onclick="makeBigTitle()">toggle size of hello</button>
-    <h1>Hello</h1>
+    <button onclick="makeBigTitle(); changeTheHeading()">toggle size of hello</button>
+    <h1 id="heading">Hello</h1>
     <button id="mavi">click me</button>
     <button class="green">click me</button>
     <button class="brown">click me</button>
     <button>click me</button>
     <div id="container">
         <button>click me</button>
-        <button class="brown" onclick="makeButtonBigger()">click me to make me bigger for 3 seconds</button>
+        <button class="brown a b c d bla bla bla" onclick="makeButtonBigger()">click me to make me bigger for 3 seconds</button>
     </div>
-    
+    <button onclick="getClassOfButton()">write css class of brown button below</button>
+    <img src="https://arabam-blog.mncdn.com/wp-content/uploads/2020/10/peugeot-208-1.jpg">
+    <button onclick="toggleImg()">toggle image</button>
+    <p id="paragraph"></p>
 
     <script
     src="https://code.jquery.com/jquery-3.7.0.js"
