@@ -1491,13 +1491,12 @@ console.log(carBrand);
 
 
 const arrayy = [1, 2, 3, 4, 5];
-      const resultt = [];
-      console.log(arrayy);
-      arrayy.forEach(element => resultt.push(element+1));
-       const result2 = arrayy.map(function(value,index,array){
+const resultt = [];
+console.log(arrayy);
+arrayy.forEach(element => resultt.push(element+1));
+const result2 = arrayy.map(function(value,index,array){
         return value+2;
       })
-      console.log(result2);
-      console.log(resultt);
+console.log(result2);
+console.log(resultt);
 
- 

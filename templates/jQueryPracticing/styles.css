@@ -1,0 +1,16 @@
+body {
+    background-color: red;
+}
+
+.bigButton{
+    width: 200px;
+    height: 200px;
+}
+
+.space{
+    margin: 50px;
+}
+
+.bigTitle{
+    font-size: 6em;
+}

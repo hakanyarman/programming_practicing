@@ -1,5 +1,9 @@
-     
-      function addNumber(arr,num) {
-        return arr.map((x) => x + num);
-      };
-      console.log(addNumber([1, 2, 3], 2));
+function sum(a,b){
+  console.log(a+b);
+};
+
+function runTwice(func){
+  func();
+}
+
+runTwice(sum(2,8))
