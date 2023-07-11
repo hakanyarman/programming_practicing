@@ -38,3 +38,62 @@ function toggleImg() {
         $("img").attr("src" , "https://arabam-blog.mncdn.com/wp-content/uploads/2020/10/peugeot-208-1.jpg")
     }
 }
+
+// how to add event listener in jQuery.
+$("h1").click(function(){
+    $("h1").css("color","white");
+})
+
+// how to add event listener to multiple html element
+// in vanillaJS we must write for loop to access all elements one by one.
+// but in jQuery $("h1") already access all the h1 tags. 
+
+
+// console.log($("#button-container div#result").css("background-color"));
+
+$("#button-container button").click(function () {
+    if($("#button-container div#result").css("background-color")=="rgb(0, 128, 0)"){
+        $("#button-container div#result").css("background-color","blue")
+    }else{
+        $("#button-container div#result").css("background-color","green")
+    }
+})
+
+$("body").keypress(function(event) {
+    $("h2").text(event.key)
+})
+
+$("body").keypress(function(event) {
+    if(event.key == "Enter"){
+        alert("Enter key is pressed")
+    }
+})
+
+$("h2").on("mouseover", function() {
+    $("h2").css("color","purple")
+})
+$("h2").on("mouseout", function() {
+    $("h2").css("color","black")
+})
+
+// how to add html elements using jQuery
+// for that there are 4 methods:
+// before() => içine aldığı parametreden(html elementi) önce oluşturur
+// after()  => içine aldığı parametreden(html elementi) önce oluşturur
+// prepend() => içine aldığı parametrenin(html elementi) içine oluşturur (ör: div) ama içindeki contend'den daha önce oluşturur
+// append() => içine aldığı parametrenin(html elementi) içine oluşturur (ör: div) ama içindeki contend'den daha sonra oluşturur
+
+$("div#create-element").before("<p id='before'>this element is created before the div</p>");
+$("div#create-element").after("<p>this element is created after the div</p>");
+$("div#create-element").prepend("<p class='prepend'>this element is created in the div but before the content of the div</p>");
+$("div#create-element").append("<p>this element is created in the div but after the content of the div</p>")
+
+// kelime anlamları:
+// prepend: başa eklemek
+// append: katmak, sona eklemek
+
+// how to remove html elements:
+
+$("#remove-prepend-button").on("click", function () {
+    $("div#create-element p.prepend").remove();
+})
