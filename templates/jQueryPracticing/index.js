@@ -97,3 +97,38 @@ $("div#create-element").append("<p>this element is created in the div but after 
 $("#remove-prepend-button").on("click", function () {
     $("div#create-element p.prepend").remove();
 })
+
+// hide(), show(), toggle()
+$("#hide-show-button").on("click", function(){
+    $("#car-image").toggle();
+})
+
+// jQuery animation
+// fadein and fadeout:
+
+$("#fade-button").on("click", function(){
+    // $("#car-image").fadeOut();
+    // $("#car-image").fadeIn();
+    $("#car-image").fadeToggle();
+}) 
+
+$("#slide-button").on("click", function(){
+    $("#car-image").slideToggle();
+}) 
+
+// animate() methodu : 
+// içine curl braces içinde yeni css stillerini yazarız. sadece sayısal css stilleri yazılabilir.
+
+$("#animate-button").click(function() {
+    console.log(typeof($("#car-image").css("opacity")));
+    console.log(($("#car-image").css("margin"))) //0 px
+    if($("#car-image").css("opacity")==1){
+        $("#car-image").animate({opacity: 0.5, margin:100})
+    }else{
+        $("#car-image").animate({opacity: 1, margin:0});
+    }
+})
+
+
+
+
