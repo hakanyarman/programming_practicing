@@ -1,8 +1,0 @@
-variable'dan önce yazılan _ (underscore) bir önceki işlemi ifade eder.
-
-ör:
-8*3
-
-_+6 // => 30
-
-tab tuşuna bastığımızda ilgili değişkene ait tüm metotlar ve property ler listelenir.

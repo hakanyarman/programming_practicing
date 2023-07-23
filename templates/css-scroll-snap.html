@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Scroll Snap</title>
+
+    <style>
+        html {
+            scroll-snap-type: y mandatory;
+        }
+
+        section {
+            height: 100vh;
+            font-size: 1.7em;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            display: flex;
+            text-align: center;
+            scroll-snap-align: start;
+            scroll-snap-stop: normal;
+            padding: 30px;
+        }
+
+        nav {
+            text-align: center;
+            background-color: blanchedalmond;
+            height: 50px;
+            width: 100vw;
+            position: fixed;
+            font-size: 3em;
+            margin-top: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        Heading
+    </nav>
+    <section style="background-color: aliceblue;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam
+        corporis commodi accusantium
+        harum,sapiente repellendus nesciunt nemo? Voluptatum iusto, neque repellat architecto itaque quidem magni
+        eveniet! Dolorum, provident hic!</section>
+
+    <section style="background-color: aqua;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam
+        corporis commodi accusantium
+        harum,sapiente repellendus nesciunt nemo? Voluptatum iusto, neque repellat architecto itaque quidem magni
+        eveniet! Dolorum, provident hic!</section>
+
+    <section style="background-color: blue;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam
+        corporis commodi accusantium
+        harum,sapiente repellendus nesciunt nemo? Voluptatum iusto, neque repellat architecto itaque quidem magni
+        eveniet! Dolorum, provident hic!</section>
+
+    <section style="background-color: chartreuse;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam
+        corporis commodi accusantium
+        harum,sapiente repellendus nesciunt nemo? Voluptatum iusto, neque repellat architecto itaque quidem magni
+        eveniet! Dolorum, provident hic!</section>
+
+    <section style="background-color: gold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae magnam
+        corporis commodi accusantium
+        harum,sapiente repellendus nesciunt nemo? Voluptatum iusto, neque repellat architecto itaque quidem magni
+        eveniet! Dolorum, provident hic!</section>
+</body>
+
+</html>
