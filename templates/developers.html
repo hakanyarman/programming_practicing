@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+
+        fetch('/templates/developers.json').then((response) => {
+            (response.json()).then(
+                (arr => {
+
+                    let devs = [];
+                    for (let i = 0; i < arr.length; i++) {
+                        devs.push(`${arr[i].name}  ${arr[i].surname}  experience:${arr[i].experienceYears} years`)
+                    }
+                    document.getElementById('container').innerHTML = devs
+                })
+            );
+        });
+    </script>
+</body>
+
+</html>

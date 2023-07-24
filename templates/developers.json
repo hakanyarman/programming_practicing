@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Hakan",
+    "surname": "Yarman",
+    "experienceYears": 2,
+    "company": null,
+    "skills": [
+      { "JavaScript": "Intermediate" },
+      { "HTML-CSS": "Intermediate" },
+      { "Bootstrap": "Beginner" },
+      { "React": "Beginner" },
+      { "Express": "Beginner" }
+    ]
+  },
+  {
+    "name": "Eren",
+    "surname": "Yıldırım",
+    "experienceYears": 5,
+    "company": "Apple",
+    "skills": [
+      { "JavaScript": "Advanced" },
+      { "HTML-CSS": "Advanced" },
+      { "Bootstrap": "Intermediate" },
+      { "Svelte": "Intermediate" },
+      { "Swift": "Advanced" }
+    ]
+  },
+  {
+    "name": "Ahmet",
+    "surname": "Ateş",
+    "experienceYears": 12,
+    "company": "Aselsan",
+    "skills": [
+      { "C++": "Advanced" },
+      { "Java": "Advanced" },
+      { "Python": "Intermediate" },
+      { "Tailwind-Css": "Beginner" },
+      { "Vue": "Intermediate" }
+    ]
+  }
+]
